@@ -1,22 +1,297 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>FGO NP Damage Calculator</title>
 
-    <title>Hello, world!</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/form-validation.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Hello, world!</h1>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>FGO NP Damage Calculator β</h2>
+        <!--<p class="lead">Testing 123</p>-->
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text">Projected Damage</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Low</h6>
+                <input type="number" class="form-control" name="low" id="low" placeholder="0" readonly>
+                <!--<small class="text-muted">Brief description</small>-->
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Average</h6>
+                <input type="number" class="form-control" name="average" id="average" placeholder="0" readonly>
+                <!--<small class="text-muted">Brief description</small>-->
+              </div>
+              <!--<span class="text-muted">0</span>-->
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">High</h6>
+                <input type="number" class="form-control" name="high" id="high" placeholder="0" readonly>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Servant Info</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="attack">Total ATK</label>
+                <input type="number" class="form-control" id="attack" placeholder="0" value="" min="0" data-bind="value:attack" required>
+                <div class="invalid-feedback">
+                  Valid attack value is required.
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="NP">NP Damage Multiplier</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="NP" placeholder="0" value="" min="0" data-bind="value:NP" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid NP multiplier is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class ="mb-3">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Card Type</span>
+                </div>
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="cardoptions" id="buster" autocomplete="off" value="buster" checked>Buster
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="cardoptions" id="arts" autocomplete="off" value="arts">Arts
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="cardoptions" id="quick" autocomplete="off" value="quick">Quick
+                </label>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="servantClass">Class</label>
+                <select class="custom-select d-block w-100" id="servantClass" required>
+                  <option value="">Choose...</option>
+                  <option value="saber">Saber</option>
+                  <option value="archer">Archer</option>
+                  <option value="lancer">Lancer</option>
+                  <option value="rider">Rider</option>
+                  <option value="caster">Caster</option>
+                  <option value="assassin">Assassin</option>
+                  <option value="berserker">Berserker</option>
+                  <option value="ruler">Ruler</option>
+                  <option value="avenger">Avenger</option>
+                  <option value="mooncancer">Moon Cancer</option>
+                  <option value="alterego">Alter Ego</option>
+                  <option value="foreigner">Foreigner</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid class.
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="state">Advantage</label>
+                <select class="custom-select d-block w-100" id="advantage">
+                  <!--<option value="">Choose...</option>-->
+                  <option value="1">Neutral</option>
+                  <option value="2">Yes (2x)</option>
+                  <option value="0.5">No (0.5x)</option>
+                  <option value="1.5">Berserker (1.5x)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="cardBuffs">Card Buffs</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="cardBuffs" placeholder="0" value="" min="0" data-bind="value:cardBuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid buff value is required.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="cardDebuffs">Card Debuffs on Enemy</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="cardDebuffs" placeholder="0" value="" min="0" data-bind="value:cardDebuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid debuff value is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="attackBuffs">Attack Buffs</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="attackBuffs" placeholder="0" value="" min="0" data-bind="value:attackBuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid buff value is required.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="defenseDebuffs">Defense Debuffs on Enemy</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="defenseDebuffs" placeholder="0" value="" min="0" data-bind="value:defenseDebuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid debuff value is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="NPBuffs">NP Damage Buffs</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="NPBuffs" placeholder="0" value="" min="0" data-bind="value:NPBuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid buff value is required.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="flatAttack">Flat Damage Attack Buffs</label>
+                  <input type="number" class="form-control" id="flatAttack" placeholder="0" value="" min="0" data-bind="value:flatAttack">
+                  <div class="invalid-feedback">
+                    Valid attack value is required.
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="SPBuffs">Special Attack Buffs</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="SPBuffs" placeholder="0" value="" min="0" data-bind="value:SPBuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid buff value is required.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="state">Earth/Sky Advantage</label>
+                <select class="custom-select d-block w-100" id="ESAdvantage">
+                  <option value="1">Neutral</option>
+                  <option value="1.1">Yes (1.1x)</option>
+                  <option value="0.9">No (0.9x)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="NPSPBuffs">NP Special Attack</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid buff value is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <hr class="mb-4">
+            <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
+            <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">created by maketakunai</p>
+        <ul class="list-inline">inspired by the work of the following:
+          <li class="list-inline-item"><a href="http://blogs.nrvnqsr.com/entry.php/3309-How-is-damage-calculated">Kyte</a></li>
+          <li class="list-inline-item"><a href="https://fgo.boyakin.net/fgocalc">Boyakin</a></li>
+          <li class="list-inline-item"><a href="https://www9.atwiki.jp/f_go/pages/2342.html">FGO @wiki</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+              event.preventDefault();
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
   </body>
 </html>
