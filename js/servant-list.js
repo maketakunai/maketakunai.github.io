@@ -87,7 +87,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":87,"name":"Fionn mac Cumhaill","class":"Lancer","attack":"1488, 8930, 10812","npmultiplier":"600, 750, 825, 862.5, 900","npspecial":"-","deck":"QQAAB(A)"},
 {"id":88,"name":"Brynhildr","class":"Lancer","attack":"1766, 11432, 12514","npmultiplier":"800, 1000, 1100, 1150, 1200","npspecial":"Brynhildr's Beloved","deck":"QQABB(B)"},
 {"id":89,"name":"Beowulf","class":"Berserker","attack":"1707, 10247, 12407","npmultiplier":"700, 900, 1000, 1050, 1100","npspecial":"-","deck":"QABBB(B)"},
-{"id":90,"name":"Nero Claudius","class":"Saber","attack":"1793, 11607, 12706","npmultiplier":"1200, 1500, 1650, 1725, 1800","npspecial":"-","deck":"QAABB(A)"},
+{"id":90,"name":"Nero Claudius [Bride]","class":"Saber","attack":"1793, 11607, 12706","npmultiplier":"1200, 1500, 1650, 1725, 1800","npspecial":"-","deck":"QAABB(A)"},
 {"id":91,"name":"Ryougi Shiki","class":"Saber","attack":"1656, 10721, 11736","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"-","deck":"QAABB(A)"},
 {"id":92,"name":"Ryougi Shiki","class":"Assassin","attack":"1477, 8867, 10736","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QQAAB(A)"},
 {"id":93,"name":"Amakusa Shirou","class":"Ruler","attack":"1695, 10972, 12011","npmultiplier":"400, 500, 550, 575, 600","npspecial":"-","deck":"QAABB(B)"},

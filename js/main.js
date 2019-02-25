@@ -1,6 +1,12 @@
 $("#servantClass").change(function () {
+    $('#grailed').prop('disabled', true);
+    $('#grailed').prop('checked', false);
     $('#npLevel').val(0).attr('disabled','disabled');
     $('#NP').val(0);
+    $('#goldFou').prop('checked', false);
+    $('#goldFou').prop('disabled', true);
+    $('#fou').prop('checked', false);
+    $('#attack').val(0);
     $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
     var matchVal = $("#servantClass option:selected").text();
     servantList.filter(function (serv) {
@@ -10,8 +16,37 @@ $("#servantClass").change(function () {
     });
 });
 
+$('#fou').on('change', function(){
+  if($(this).is(':checked')){
+    $('#attack').val(Number($('#attack').val())+1000);
+    $('#goldFou').prop('disabled', false);
+  }
+  else {
+    $('#attack').val(Number($('#attack').val())-1000);
+    $('#goldFou').prop('disabled', true);
+    if($('#goldFou').is(':checked')){
+      $('#goldFou').prop('checked', false);
+      $('#goldFou').prop('disabled', true);
+      $('#attack').val(Number($('#attack').val())-1000);
+    }
+  }
+});
+
+$('#goldFou').on('change', function(){
+  if($(this).is(':checked')){
+    $('#attack').val(Number($('#attack').val())+1000);
+  }
+  else
+    $('#attack').val(Number($('#attack').val())-1000);
+  });
+
 $('#servant').on('change', function(){
+  $('#grailed').prop('disabled', false);
   $('#npLevel').val(0).removeAttr('disabled','disabled');
+  $('#goldFou').prop('checked', false);
+  $('#goldFou').prop('disabled', true);
+  $('#fou').prop('checked', false);
+  $('#attack').val(0);
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
         let npcard = ``;
@@ -33,6 +68,27 @@ $('#servant').on('change', function(){
         }
         $('#NP').val( Number(multi[0]) );
         $('#attack').val( Number(attk[1]) );
+
+        /*
+        $('#grailed').on('change', function(){
+          if ($('#goldFou').is(':checked') && $('#fou').is(':checked')) {
+            $('#attack').val( Number(attk[2]) + 2000);
+          }
+          else if($(this).is(':checked') && $('#fou').is(':checked')){
+            $('#attack').val( Number(attk[2]) + 1000);
+          }
+          else if ($(this).is(':checked')) {
+            $('#attack').val( Number(attk[1]) );
+          }
+          //else if ($(this).is(':checked') && $(this).is(':checked') && $(this).is(':checked'))
+          else {
+            $('#goldFou').prop('checked', false);
+            $('#goldFou').prop('disabled', true);
+            $('#fou').prop('checked', false);
+            $('#attack').val( Number(attk[1]) );
+          }
+        });*/
+
         $('#'+npcard).prop("checked", true).click();
         $('#npLevel').on('change', function(){
           $('#NP').val( Math.round(Number( multi[$('#npLevel').val()] ) ));
@@ -80,6 +136,11 @@ $('form').on('submit', function() {
 });
 
 $('form').on('reset', function() {
+  $('#grailed').prop('checked', false);
+  $('#grailed').prop('disabled', true);
+  $('#goldFou').prop('checked', false);
+  $('#goldFou').prop('disabled', true);
+  $('#fou').prop('checked', false);
   $('#npLevel').val(0).attr('disabled','disabled');
   $('#NP').val(0);
   $('#low').val(0);
