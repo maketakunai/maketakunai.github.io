@@ -1,16 +1,5 @@
-//var dropdown = $('#servant');
-//dropdown.empty();
-//dropdown.append('<option selected="true" disabled>Choose...</option>');
-//dropdown.prop('selectedIndex', 0);
-//const servantList = './js/servant-list.json';
-
-//$.getJSON(servantList, function (data) {
-  //$.each(servantList, function (key, entry) {
-    //dropdown.append($('<option></option>').attr('value', entry.class).text(entry.name));
-  //})
-//});
 $("#servantClass").change(function () {
-    $('#npLevel').val(0);
+    $('#npLevel').val(0).attr('disabled','disabled');
     $('#NP').val(0);
     $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
     var matchVal = $("#servantClass option:selected").text();
@@ -22,10 +11,9 @@ $("#servantClass").change(function () {
 });
 
 $('#servant').on('change', function(){
-  $('#npLevel').val(0);
+  $('#npLevel').val(0).removeAttr('disabled','disabled');
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
-        //$('#attack').val( $('#servant').val() )
         let npcard = ``;
         switch(servantList[i].deck[6]){
           case "Q":
@@ -44,7 +32,6 @@ $('#servant').on('change', function(){
           multi = servantList[i].npmultiplier.split(',');
         }
         $('#NP').val( Number(multi[0]) );
-        //$('#npLevel').reset();
         $('#attack').val( Number(attk[1]) );
         $('#'+npcard).prop("checked", true).click();
         $('#npLevel').on('change', function(){
@@ -93,6 +80,7 @@ $('form').on('submit', function() {
 });
 
 $('form').on('reset', function() {
+  $('#npLevel').val(0).attr('disabled','disabled');
   $('#NP').val(0);
   $('#low').val(0);
   $('#average').val(0);
