@@ -35,7 +35,7 @@ $('#servant').on('change', function(){
         $('#attack').val( Number(attk[1]) );
         $('#'+npcard).prop("checked", true).click();
         $('#npLevel').on('change', function(){
-          $('#NP').val( Number( multi[$('#npLevel').val()] ) );
+          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()] ) ));
         });
     }
   }
