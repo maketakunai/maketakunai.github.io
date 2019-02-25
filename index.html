@@ -65,6 +65,15 @@
                   Valid attack value is required.
                 </div>
               </div>
+              <!--<div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" class="custom-control-input" id="fou">
+                <label class="custom-control-label" for="fou">Fou</label>
+              </div>
+              <div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" class="custom-control-input" id="goldFou">
+                <label class="custom-control-label" for="goldFou">Gold Fou</label>
+              </div>-->
+
               <div class="col-md-5 mb-3">
                 <label for="NP">NP Damage Multiplier</label>
                 <div class="input-group">
@@ -79,54 +88,66 @@
               </div>
             </div>
 
-            <div class ="mb-3">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">NP Card Type</span>
+
+            <div class="row">
+              <div class ="col-md-5 mb-3">
+                <label for="radio">NP Type</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <!--<div class="input-group-prepend">
+                    <span class="input-group-text">NP Type</span>
+                  </div>-->
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="cardoptions" id="buster" autocomplete="off" value="buster" checked>Buster
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="cardoptions" id="arts" autocomplete="off" value="arts">Arts
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="cardoptions" id="quick" autocomplete="off" value="quick">Quick
+                  </label>
                 </div>
-                <label class="btn btn-secondary active">
-                  <input type="radio" name="cardoptions" id="buster" autocomplete="off" value="buster" checked>Buster
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="cardoptions" id="arts" autocomplete="off" value="arts">Arts
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="cardoptions" id="quick" autocomplete="off" value="quick">Quick
-                </label>
               </div>
-            </div>
+              <div class="col-md-5 mb-3">
+                <label for="state">NP Level</label>
+                <select class="custom-select d-block w-100" id="npLevel">
+                  <!--<option value="">Choose...</option>-->
+                  <option value="0">NP 1</option>
+                  <option value="1">NP 2</option>
+                  <option value="2">NP 3</option>
+                  <option value="3">NP 4</option>
+                  <option value="4">NP 5</option>
+                </select>
+              </div>
+          </div>
+
 
 
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="servantClass">Class</label>
                 <select class="custom-select d-block w-100" id="servantClass" required>
-                  <option value="">Choose...</option>
-                  <option value="saber">Saber</option>
-                  <option value="archer">Archer</option>
-                  <option value="lancer">Lancer</option>
-                  <option value="rider">Rider</option>
-                  <option value="caster">Caster</option>
-                  <option value="assassin">Assassin</option>
-                  <option value="berserker">Berserker</option>
-                  <option value="ruler">Ruler</option>
-                  <option value="avenger">Avenger</option>
-                  <option value="mooncancer">Moon Cancer</option>
-                  <option value="alterego">Alter Ego</option>
-                  <option value="foreigner">Foreigner</option>
+                  <option value="" selected = "true" disabled>Choose...</option>
+                  <option value="Saber">Saber</option>
+                  <option value="Archer">Archer</option>
+                  <option value="Lancer">Lancer</option>
+                  <option value="Rider">Rider</option>
+                  <option value="Caster">Caster</option>
+                  <option value="Assassin">Assassin</option>
+                  <option value="Berserker">Berserker</option>
+                  <option value="Ruler">Ruler</option>
+                  <option value="Avenger">Avenger</option>
+                  <option value="Mooncancer">Moon Cancer</option>
+                  <option value="Alterego">Alter Ego</option>
+                  <option value="Foreigner">Foreigner</option>
                 </select>
                 <div class="invalid-feedback">
-                  Please select a valid class.
+                  Please select a class.
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="state">Advantage</label>
-                <select class="custom-select d-block w-100" id="advantage">
-                  <!--<option value="">Choose...</option>-->
-                  <option value="1">Neutral</option>
-                  <option value="2">Yes (2x)</option>
-                  <option value="0.5">No (0.5x)</option>
-                  <option value="1.5">Berserker (1.5x)</option>
+                <label for="state">Servant</label>
+                <select class="custom-select d-block w-100" id="servant">
+                  <option value="" selected = "true" disabled>Choose a class first!</option>
                 </select>
               </div>
             </div>
@@ -230,21 +251,31 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="NPSPBuffs">NP Special Attack</label>
-                <div class="input-group">
-                  <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
-                  <div class="input-group-append">
-                    <span class="input-group-text">%</span>
-                  </div>
-                  <div class="invalid-feedback">
-                    Valid attack value is required.
+
+              <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="NPSPBuffs">NP Special Attack</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                    <div class="invalid-feedback">
+                      Valid attack value is required.
+                    </div>
                   </div>
                 </div>
-              </div>
+                <div class="col-md-5 mb-3">
+                  <label for="state">Advantage</label>
+                  <select class="custom-select d-block w-100" id="advantage">
+                    <!--<option value="">Choose...</option>-->
+                    <option value="1">Neutral</option>
+                    <option value="2">Yes (2x)</option>
+                    <option value="0.5">No (0.5x)</option>
+                    <option value="1.5">Berserker (1.5x)</option>
+                  </select>
+                </div>
             </div>
-
 
             <hr class="mb-4">
             <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
@@ -269,7 +300,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./js/servant-list.js"></script>
     <script src="./js/main.js"></script>
+
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
