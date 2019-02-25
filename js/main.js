@@ -80,7 +80,7 @@ $('form').on('submit', function() {
                 (1 + attackBuffs + defenseDebuffs) *
                 (1 + cardBuffs + cardDebuffs) *
                 (1 + npBuffs + spBuffs) *
-                (1 + npspBuffs) * esAdvantage + flatAttack;
+                (npspBuffs) * esAdvantage + flatAttack;
 
     $('#average').val(Math.round(total));
     $('#low').val(Math.round(0.9 * total));
