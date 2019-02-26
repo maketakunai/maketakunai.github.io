@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
 
     <title>FGO Noble Phantasm Damage Calculator</title>
 
@@ -34,14 +34,12 @@
               <div>
                 <h6 class="my-0">Low</h6>
                 <input type="number" class="form-control" name="low" id="low" placeholder="0" readonly>
-                <!--<small class="text-muted">Brief description</small>-->
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Average</h6>
                 <input type="number" class="form-control" name="average" id="average" placeholder="0" readonly>
-                <!--<small class="text-muted">Brief description</small>-->
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -82,7 +80,7 @@
               <div class ="col-md-10 mb-3">
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="grailed" disabled>
-                  <label class="custom-control-label" for="grailed">Max Grailed (placeholder)</label>
+                  <label class="custom-control-label" for="grailed">Max Grailed</label>
                 </div>
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="fou">
@@ -93,7 +91,7 @@
                   <label class="custom-control-label" for="goldFou">Golden Fou</label>
                 </div>
               </div>
-          </div>
+            </div>
 
 
             <div class="row">
@@ -159,7 +157,11 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="cardBuffs">Card Buffs</label>
+                <label for="cardBuffs">Card Buffs
+                  <img src="./img/busterup.png" width="20"></img>
+                  <img src="./img/artsup.png" width="20"></img>
+                  <img src="./img/quickup.png" width="20"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="cardBuffs" placeholder="0" value="" min="0" data-bind="value:cardBuffs">
                   <div class="input-group-append">
@@ -186,7 +188,9 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="attackBuffs">Attack Buffs</label>
+                <label for="attackBuffs">Attack Buffs
+                  <img src="./img/attackup.png" width="20"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="attackBuffs" placeholder="0" value="" min="0" data-bind="value:attackBuffs">
                   <div class="input-group-append">
@@ -213,7 +217,9 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="NPBuffs">NP Damage Buffs</label>
+                <label for="NPBuffs">NP Damage Buffs
+                  <img src="./img/npdamageup.png" width="20"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="NPBuffs" placeholder="0" value="" min="0" data-bind="value:NPBuffs">
                   <div class="input-group-append">
@@ -235,7 +241,9 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="SPBuffs">Special Attack Buffs</label>
+                <label for="SPBuffs">Special Attack Buffs
+                  <img src="./img/specialattackup.png" width="20"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="SPBuffs" placeholder="0" value="" min="0" data-bind="value:SPBuffs">
                   <div class="input-group-append">
@@ -247,28 +255,28 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="state">Earth/Sky Advantage</label>
-                <select class="custom-select d-block w-100" id="ESAdvantage">
-                  <option value="1">Neutral</option>
-                  <option value="1.1">Yes (1.1x)</option>
-                  <option value="0.9">No (0.9x)</option>
-                </select>
+                <label for="NPSPBuffs">NP Special Attack</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
+                  <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid attack value is required.
+                  </div>
+                </div>
               </div>
             </div>
 
 
               <div class="row">
                 <div class="col-md-5 mb-3">
-                  <label for="NPSPBuffs">NP Special Attack</label>
-                  <div class="input-group">
-                    <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
-                    <div class="input-group-append">
-                      <span class="input-group-text">%</span>
-                    </div>
-                    <div class="invalid-feedback">
-                      Valid attack value is required.
-                    </div>
-                  </div>
+                  <label for="state">Man/Earth/Sky Advantage</label>
+                  <select class="custom-select d-block w-100" id="ESAdvantage">
+                    <option value="1">Neutral</option>
+                    <option value="1.1">Yes (1.1x)</option>
+                    <option value="0.9">No (0.9x)</option>
+                  </select>
                 </div>
                 <div class="col-md-5 mb-3">
                   <label for="state">Advantage</label>
@@ -281,6 +289,24 @@
                   </select>
                 </div>
             </div>
+
+            <!--<hr class="mb-4">
+            <div class="row">
+              <div class ="col-md-10 mb-3">
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="mlbBgrail">
+                  <label class="custom-control-label" for="mlbBgrail">MLB Black Grail</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="doubleSkadi">
+                  <label class="custom-control-label" for="doubleSkadi">2x Skadi</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="doubleMerlin">
+                  <label class="custom-control-label" for="doubleMerlin">2x Merlin</label>
+                </div>
+              </div>
+            </div>-->
 
             <hr class="mb-4">
             <button type="submit" class="btn btn-primary btn-lg">Calculate</button>

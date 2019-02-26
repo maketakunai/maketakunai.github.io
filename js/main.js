@@ -1,19 +1,19 @@
 $("#servantClass").change(function () {
-    $('#grailed').prop('disabled', true);
-    $('#grailed').prop('checked', false);
-    $('#npLevel').val(0).attr('disabled','disabled');
-    $('#NP').val(0);
-    $('#goldFou').prop('checked', false);
-    $('#goldFou').prop('disabled', true);
-    $('#fou').prop('checked', false);
-    $('#attack').val(0);
-    $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
-    var matchVal = $("#servantClass option:selected").text();
-    servantList.filter(function (serv) {
-        if (serv.class == matchVal) {
-            $("#servant").append($('<option></option>').val(serv.id).html(serv.name));
-        }
-    });
+  $('#grailed').prop('disabled', true);
+  $('#grailed').prop('checked', false);
+  $('#fou').prop('checked', false);
+  $('#goldFou').prop('checked', false);
+  $('#goldFou').prop('disabled', true);
+  $('#npLevel').val(0).attr('disabled','disabled');
+  //$('#NP').val(0);
+  //$('#attack').val(0);
+  $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
+  var matchVal = $("#servantClass option:selected").text();
+  servantList.filter(function (serv) {
+      if (serv.class == matchVal && serv.npmultiplier) {
+          $("#servant").append($('<option></option>').val(serv.id).html(serv.name));
+      }
+  });
 });
 
 $('#fou').on('change', function(){
@@ -38,7 +38,7 @@ $('#goldFou').on('change', function(){
   }
   else
     $('#attack').val(Number($('#attack').val())-1000);
-  });
+});
 
 $('#servant').on('change', function(){
   $('#grailed').prop('disabled', false);
@@ -47,6 +47,7 @@ $('#servant').on('change', function(){
   $('#goldFou').prop('disabled', true);
   $('#fou').prop('checked', false);
   $('#attack').val(0);
+  $('#NPBuffs').val(0);
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
         let npcard = ``;
@@ -67,27 +68,27 @@ $('#servant').on('change', function(){
           multi = servantList[i].npmultiplier.split(',');
         }
         $('#NP').val( Number(multi[0]) );
-        $('#attack').val( Number(attk[1]) );
 
-        /*
+        if ($('#grailed').is(':checked')){
+          $('#attack').val( Number( attk[2]) );
+        }
+        else
+          $('#attack').val( Number( attk[1]) );
+
         $('#grailed').on('change', function(){
-          if ($('#goldFou').is(':checked') && $('#fou').is(':checked')) {
-            $('#attack').val( Number(attk[2]) + 2000);
+          if ($(this).is(':checked')) {
+            $('#goldFou').prop('checked', false);
+            $('#goldFou').prop('disabled', true);
+            $('#fou').prop('checked', false);
+            $('#attack').val( Number(attk[2]) );
           }
-          else if($(this).is(':checked') && $('#fou').is(':checked')){
-            $('#attack').val( Number(attk[2]) + 1000);
-          }
-          else if ($(this).is(':checked')) {
-            $('#attack').val( Number(attk[1]) );
-          }
-          //else if ($(this).is(':checked') && $(this).is(':checked') && $(this).is(':checked'))
           else {
             $('#goldFou').prop('checked', false);
             $('#goldFou').prop('disabled', true);
             $('#fou').prop('checked', false);
             $('#attack').val( Number(attk[1]) );
           }
-        });*/
+        });
 
         $('#'+npcard).prop("checked", true).click();
         $('#npLevel').on('change', function(){
@@ -136,18 +137,23 @@ $('form').on('submit', function() {
 });
 
 $('form').on('reset', function() {
-  $('#grailed').prop('checked', false);
-  $('#grailed').prop('disabled', true);
-  $('#goldFou').prop('checked', false);
-  $('#goldFou').prop('disabled', true);
-  $('#fou').prop('checked', false);
-  $('#npLevel').val(0).attr('disabled','disabled');
-  $('#NP').val(0);
+  resetStuff();
   $('#low').val(0);
   $('#average').val(0);
   $('#high').val(0);
   $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
 });
+
+function resetStuff () {
+  $('#grailed').prop('disabled', true);
+  $('#grailed').prop('checked', false);
+  $('#fou').prop('checked', false);
+  $('#goldFou').prop('checked', false);
+  $('#goldFou').prop('disabled', true);
+  $('#npLevel').val(0).attr('disabled','disabled');
+  $('#NP').val(0);
+  $('#attack').val(0);
+}
 
 function classDmg(input){
   var classVal = 1;
