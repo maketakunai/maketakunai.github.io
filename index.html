@@ -113,7 +113,9 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="state">NP Level</label>
+                <label for="state">NP Level
+                  <img src="./img/npupgrade.png" width="20" id ="npupgraded"></img>
+                </label>
                 <select class="custom-select d-block w-100" id="npLevel" disabled>
                   <!--<option value="">Choose...</option>-->
                   <option value="0">NP 1</option>
@@ -333,7 +335,7 @@
     <script src="./js/main.js" type="text/javascript"></script>
 
     <script>
-
+    $('#npupgraded').hide();
       (function() {
         'use strict';
         window.addEventListener('load', function() {

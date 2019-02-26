@@ -5,6 +5,7 @@ $("#servantClass").change(function () {
   $('#goldFou').prop('checked', false);
   $('#goldFou').prop('disabled', true);
   $('#npLevel').val(0).attr('disabled','disabled');
+  $('#npupgraded').hide();
   //$('#NP').val(0);
   //$('#attack').val(0);
   $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
@@ -48,6 +49,7 @@ $('#servant').on('change', function(){
   $('#fou').prop('checked', false);
   $('#attack').val(0);
   $('#NPBuffs').val(0);
+  $('#npupgraded').hide();
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
         let npcard = ``;
@@ -68,6 +70,10 @@ $('#servant').on('change', function(){
           multi = servantList[i].npmultiplier.split(',');
         }
         $('#NP').val( Number(multi[0]) );
+
+        if (servantList[i].npupgrade == 1) {
+          $('#npupgraded').show();
+        }
 
         if ($('#grailed').is(':checked')){
           $('#attack').val( Number( attk[2]) );
@@ -145,6 +151,7 @@ $('form').on('reset', function() {
 });
 
 function resetStuff () {
+  $('#npupgraded').hide();
   $('#grailed').prop('disabled', true);
   $('#grailed').prop('checked', false);
   $('#fou').prop('checked', false);
