@@ -234,4 +234,5 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":234,"name":"Beni-Enma","class":"Saber","attack":"1793, 11607, 12706","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Chaotic・Evil","deck":"QAABB(A)","npupgrade":0},
 {"id":235,"name":"Li Shuwen","class":"Assassin","attack":"1772, 11470, 12556","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QAABB(A)","npupgrade":0},
 {"id":236,"name":"Miyu Edelfelt","class":"Caster","attack":"1438, 8629, 10448","npmultiplier":"","npspecial":"-","deck":"QAAAB(A)","npupgrade":0},
-{"id":237,"name":"Murasaki Shikibu","class":"Caster","attack":"1757, 11374, 12451","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"Demonic","deck":"QQAAB(A)","npupgrade":0}]
+{"id":237,"name":"Murasaki Shikibu","class":"Caster","attack":"1757, 11374, 12451","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"Demonic","deck":"QQAAB(A)","npupgrade":0},
+{"id":238,"name":"Kingprotea","class":"Alter Ego","attack":"1983, 12835, 14050","npmultiplier":"300, 400, 450, 475, 500","npspecial":"Proliferation","deck":"QAABB(B)","npupgrade":0}]
