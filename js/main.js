@@ -48,7 +48,7 @@ $('#servant').on('change', function(){
   $('#goldFou').prop('disabled', true);
   $('#fou').prop('checked', false);
   $('#attack').val(0);
-  $('#NPBuffs').val(0);
+  //$('#NPBuffs').val(0);
   $('#npupgraded').hide();
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
