@@ -46,17 +46,20 @@
               </div>
             </li>
           </ul>
+          <p>How to use this Calculator
+            <ul>
+              <li>Class, ATK, and NP Damage Multiplier fields are required</li>
+              <li>Once you select a Class and Servant, its ATK and NP Multiplier fields will autofill</li>
+              <li>Fill in values for any buffs/debuffs and press Calculate</li>
+            </ul>
+          </p>
           <p>Tips
             <ul>
               <li>Updated through Servant 239 (Kama) (2019.03.27)</li>
+              <li>All NP multiplier values are up-to-date with JP server</li>
               <li>Don't forget Passive Skill effects when doing calculations</li>
               <li>Keep in mind effects that "activate first" before NP</li>
               <li>Hover over the <img src="./img/alert-circle-outline.png" width="20"</img> for more detail about certain fields</li>
-            </ul>
-          </p>
-          <p>To-do
-            <ul>
-              <li>Autofill buff fields based on servant</li>
             </ul>
           </p>
         </div>
@@ -153,7 +156,7 @@
               </div>
               <div class="col-md-5 mb-3">
                 <label for="state">NP Level
-                  <img src="./img/npupgrade.png" width="20" id ="npupgraded"></img>
+                  <img src="./img/npupgrade.png" width="20" class="float-right" hspace="5" id="npupgraded" data-toggle="tooltip" data-html="true" title="This servant has undergone an NP Upgrade."></img>
                 </label>
                 <select class="custom-select d-block w-100" id="npLevel" disabled>
                   <!--<option value="">Choose...</option>-->
@@ -169,9 +172,9 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="cardBuffs">Card Buffs
-                  <img src="./img/busterup.png" class="float-right" hspace="2" width="20"></img>
-                  <img src="./img/artsup.png" class="float-right" hspace="2" width="20"></img>
                   <img src="./img/quickup.png" class="float-right" hspace="2" width="20"></img>
+                  <img src="./img/artsup.png" class="float-right" hspace="2" width="20"></img>
+                  <img src="./img/busterup.png" class="float-right" hspace="2" width="20"></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="cardBuffs" placeholder="0" value="" min="0" data-bind="value:cardBuffs">
@@ -184,7 +187,9 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="cardDebuffs">Card Debuffs on Enemy</label>
+                <label for="cardDebuffs">Card Debuffs on Enemy
+                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="<img class='img-thumbnail{background-color:transparent}' hspace='2' width='20' src='./img/busterresistdown.png'/><img class='img-thumbnail{background-color:transparent}' hspace='2' width='20' src='./img/artsresistdown.png'/><img class='img-thumbnail{background-color:transparent}' hspace='2' width='20' src='./img/quickresistdown.png'/>"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="cardDebuffs" placeholder="0" value="" min="0" data-bind="value:cardDebuffs">
                   <div class="input-group-append">
@@ -213,7 +218,9 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="defenseDebuffs">Defense Debuffs on Enemy</label>
+                <label for="defenseDebuffs">Defense Debuffs on Enemy
+                  <img src="./img/defensedown.png" class="float-right" hspace="5" width="20"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="defenseDebuffs" placeholder="0" value="" min="0" data-bind="value:defenseDebuffs">
                   <div class="input-group-append">
