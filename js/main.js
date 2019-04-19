@@ -200,3 +200,7 @@ function cardDmg(input){
   }
   return cardVal;
 }
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

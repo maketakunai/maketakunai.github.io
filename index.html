@@ -50,12 +50,13 @@
             <ul>
               <li>Updated through Servant 239 (Kama) (2019.03.27)</li>
               <li>Don't forget Passive Skill effects when doing calculations</li>
+              <li>Keep in mind effects that "activate first" before NP</li>
+              <li>Hover over the ? for more detail about certain fields</li>
             </ul>
           </p>
           <p>To-do
             <ul>
               <li>Autofill buff fields based on servant</li>
-              <li>Add checkboxes for common CEs, double merlin/skadi</li>
             </ul>
           </p>
         </div>
@@ -63,6 +64,35 @@
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Servant Info</h4>
           <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="servantClass">Class</label>
+                <select class="custom-select d-block w-100" id="servantClass" required>
+                  <option value="" selected = "true" disabled>Choose...</option>
+                  <option value="Saber">Saber</option>
+                  <option value="Archer">Archer</option>
+                  <option value="Lancer">Lancer</option>
+                  <option value="Rider">Rider</option>
+                  <option value="Caster">Caster</option>
+                  <option value="Assassin">Assassin</option>
+                  <option value="Berserker">Berserker</option>
+                  <option value="Ruler">Ruler</option>
+                  <option value="Avenger">Avenger</option>
+                  <option value="Mooncancer">Moon Cancer</option>
+                  <option value="Alterego">Alter Ego</option>
+                  <option value="Foreigner">Foreigner</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a class.
+                </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="state">Servant</label>
+                <select class="custom-select d-block w-100" id="servant">
+                  <option value="" selected = "true" disabled>Choose a class first!</option>
+                </select>
+              </div>
+            </div>
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="attack">Total ATK</label>
@@ -138,40 +168,10 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="servantClass">Class</label>
-                <select class="custom-select d-block w-100" id="servantClass" required>
-                  <option value="" selected = "true" disabled>Choose...</option>
-                  <option value="Saber">Saber</option>
-                  <option value="Archer">Archer</option>
-                  <option value="Lancer">Lancer</option>
-                  <option value="Rider">Rider</option>
-                  <option value="Caster">Caster</option>
-                  <option value="Assassin">Assassin</option>
-                  <option value="Berserker">Berserker</option>
-                  <option value="Ruler">Ruler</option>
-                  <option value="Avenger">Avenger</option>
-                  <option value="Mooncancer">Moon Cancer</option>
-                  <option value="Alterego">Alter Ego</option>
-                  <option value="Foreigner">Foreigner</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a class.
-                </div>
-              </div>
-              <div class="col-md-5 mb-3">
-                <label for="state">Servant</label>
-                <select class="custom-select d-block w-100" id="servant">
-                  <option value="" selected = "true" disabled>Choose a class first!</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-5 mb-3">
                 <label for="cardBuffs">Card Buffs
-                  <img src="./img/busterup.png" width="20"></img>
-                  <img src="./img/artsup.png" width="20"></img>
-                  <img src="./img/quickup.png" width="20"></img>
+                  <img src="./img/busterup.png" class="float-right" hspace="2" width="20"></img>
+                  <img src="./img/artsup.png" class="float-right" hspace="2" width="20"></img>
+                  <img src="./img/quickup.png" class="float-right" hspace="2" width="20"></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="cardBuffs" placeholder="0" value="" min="0" data-bind="value:cardBuffs">
@@ -200,7 +200,7 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="attackBuffs">Attack Buffs
-                  <img src="./img/attackup.png" width="20"></img>
+                  <img src="./img/attackup.png" class="float-right" hspace="5" width="20"></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="attackBuffs" placeholder="0" value="" min="0" data-bind="value:attackBuffs">
@@ -229,7 +229,7 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="NPBuffs">NP Damage Buffs
-                  <img src="./img/npdamageup.png" width="20"></img>
+                  <img src="./img/npdamageup.png" class="float-right" hspace="5" width="20"></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="NPBuffs" placeholder="0" value="" min="0" data-bind="value:NPBuffs">
@@ -242,7 +242,9 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="flatAttack">Flat Damage Attack Buffs</label>
+                <label for="flatAttack">Flat Damage Attack Buffs
+                  <img src="./img/question.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Flat damage attack values, like Divinity.<br><b>Not a percentage boost!</b>"></img>
+                </label>
                   <input type="number" class="form-control" id="flatAttack" placeholder="0" value="" min="0" data-bind="value:flatAttack">
                   <div class="invalid-feedback">
                     Valid attack value is required.
@@ -253,7 +255,8 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="SPBuffs">Special Attack Buffs
-                  <img src="./img/specialattackup.png" width="20"></img>
+                  <img src="./img/question.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Buffs that 'increase own damage against' something.<br>Buffs like Jack's vs. females would go here."></img>
+                  <img src="./img/specialattackup.png" class="float-right" hspace="5" width="20"></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="SPBuffs" placeholder="0" value="" min="0" data-bind="value:SPBuffs">
@@ -266,7 +269,9 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="NPSPBuffs">NP Special Attack</label>
+                <label for="NPSPBuffs">NP Special Attack
+                  <img src="./img/question.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="When the NP 'Deals Extra Damage' to certain things.<br>Multipliers like Arash's overcharge would go here.<br><b>Not for buff multipliers!</b>"></img>
+                </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
                   <div class="input-group-append">
