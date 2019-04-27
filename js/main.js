@@ -118,7 +118,7 @@ $('form').on('submit', function() {
     var flatAttack = parseFloat($('#flatAttack').val()) || 0;
     var spBuffs = parseFloat($('#SPBuffs').val())/100 || 0;
     var esAdvantage = parseFloat($('#ESAdvantage').val()) || 0;
-    var npspBuffs = (parseFloat($('#NPSPBuffs').val()) - 100)/100 || 0;
+    var npspBuffs = parseFloat($('#NPSPBuffs').val())/100 || 0;
 
     $('#servantClass').on('change',function(){
         servantClass = $('#servantClass').val();
@@ -160,6 +160,7 @@ function resetStuff () {
   $('#npLevel').val(0).attr('disabled','disabled');
   $('#NP').val(0);
   $('#attack').val(0);
+  $('#NPSPBuffs').val(0);
 }
 
 function classDmg(input){
