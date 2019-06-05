@@ -167,7 +167,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":167,"name":"Sessyoin Kiara","class":"Alter Ego","attack":"1803, 11668, 12772","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"Ruler","deck":"QAABB(A)","npupgrade":0},
 {"id":168,"name":"B e a s t III/R","class":"Beast","attack":"2121, 13728, 15027","npmultiplier":"","npspecial":"-","deck":"QAABB(A)","npupgrade":0},
 {"id":169,"name":"Fuyajo Caster","class":"Caster","attack":"1423, 9212, 10084","npmultiplier":"600, 750, 825, 862.5, 900","npspecial":"King","deck":"QAAAB(A)","npupgrade":1},
-{"id":170,"name":"Fuyajo Assassin","class":"Assassin","attack":"1496, 8981, 10874","npmultiplier":"1200, 1600, 1800, 1900, 2000","npspecial":"-","deck":"QQABB(Q)","npupgrade":0},
+{"id":170,"name":"Fuyajo Assassin","class":"Assassin","attack":"1496, 8981, 10874","npmultiplier":"1600, 2000, 2200, 2300, 2400","npspecial":"-","deck":"QQABB(Q)","npupgrade":1},
 {"id":171,"name":"El Dorado Berserker","class":"Berserker","attack":"1750, 10502, 12716","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"Greek Mythology Males","deck":"QABBB(B)","npupgrade":0},
 {"id":172,"name":"Resistance Rider","class":"Rider","attack":"1216, 6552, 8867","npmultiplier":"400, 500, 550, 575, 600","npspecial":"-","deck":"QAABB(B)","npupgrade":1},
 {"id":173,"name":"Sherlock Holmes","class":"Ruler","attack":"1776, 11495, 12583","npmultiplier":"","npspecial":"","deck":"QQAAB(A)","npupgrade":0},
@@ -237,6 +237,6 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":237,"name":"Murasaki Shikibu","class":"Caster","attack":"1757, 11374, 12451","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"Demonic","deck":"QQAAB(A)","npupgrade":0},
 {"id":238,"name":"Kingprotea","class":"Alter Ego","attack":"1983, 12835, 14050","npmultiplier":"300, 400, 450, 475, 500","npspecial":"Proliferation","deck":"QAABB(B)","npupgrade":0},
 {"id":239,"name":"Kama","class":"Assassin","attack":"1781, 11528, 12619","npmultiplier":"1200, 1600, 1800, 1900, 2000","npspecial":"-","deck":"QQABB(Q)","npupgrade":0},
-{"id":241,"name":"Sima Qi","class":"Rider","attack":"1766, 11427, 12509","npmultiplier":"","npspecial":"-","deck":"QQAAB(A)","npupgrade":0},
+{"id":241,"name":"Sima Yi","class":"Rider","attack":"1766, 11427, 12509","npmultiplier":"","npspecial":"-","deck":"QQAAB(A)","npupgrade":0},
 {"id":242,"name":"Astraea","class":"Ruler","attack":"1622, 9734, 11786","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Evil","deck":"QAABB(A)","npupgrade":0},
 {"id":243,"name":"Gray","class":"Assassin","attack":"1576, 9456, 11499","npmultiplier":"300, 400, 450, 475, 500","npspecial":"Undead","deck":"QQQAB(B)","npupgrade":0}]
