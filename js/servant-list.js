@@ -239,4 +239,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":239,"name":"Kama","class":"Assassin","attack":"1781, 11528, 12619","npmultiplier":"1200, 1600, 1800, 1900, 2000","npspecial":"-","deck":"QQABB(Q)","npupgrade":0},
 {"id":241,"name":"Sima Yi","class":"Rider","attack":"1766, 11427, 12509","npmultiplier":"","npspecial":"-","deck":"QQAAB(A)","npupgrade":0},
 {"id":242,"name":"Astraea","class":"Ruler","attack":"1622, 9734, 11786","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Evil","deck":"QAABB(A)","npupgrade":0},
-{"id":243,"name":"Gray","class":"Assassin","attack":"1576, 9456, 11499","npmultiplier":"300, 400, 450, 475, 500","npspecial":"Undead","deck":"QQQAB(B)","npupgrade":0}]
+{"id":243,"name":"Gray","class":"Assassin","attack":"1576, 9456, 11499","npmultiplier":"300, 400, 450, 475, 500","npspecial":"Undead","deck":"QQQAB(B)","npupgrade":0},
+{"id":244,"name":"Great Statue God","class":"Moon Cancer","attack":"1416, 9166, 10034","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"-","deck":"QAAAB(A)","npupgrade":0},
+{"id":245,"name":"Lakshmibai","class":"Saber","attack":"1658, 9949, 12046","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"-","deck":"QQABB(Q)","npupgrade":0},
+{"id":246,"name":"William Tell","class":"Archer","attack":"1371, 7834, 9993","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Evasion","deck":"QAABB(A)","npupgrade":0}]
