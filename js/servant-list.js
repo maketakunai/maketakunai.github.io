@@ -242,4 +242,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":243,"name":"Gray","class":"Assassin","attack":"1576, 9456, 11499","npmultiplier":"300, 400, 450, 475, 500","npspecial":"Undead","deck":"QQQAB(B)","npupgrade":0},
 {"id":244,"name":"Great Statue God","class":"Moon Cancer","attack":"1416, 9166, 10034","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"-","deck":"QAAAB(A)","npupgrade":0},
 {"id":245,"name":"Lakshmibai","class":"Saber","attack":"1658, 9949, 12046","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"-","deck":"QQABB(Q)","npupgrade":0},
-{"id":246,"name":"William Tell","class":"Archer","attack":"1371, 7834, 9993","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Evasion","deck":"QAABB(A)","npupgrade":0}]
+{"id":246,"name":"William Tell","class":"Archer","attack":"1371, 7834, 9993","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Evasion","deck":"QAABB(A)","npupgrade":0},
+{"id":247,"name":"Arjuna [Alter]","class":"Berserker","attack":"1803, 11669, 12773","npmultiplier":"300, 400, 450, 475, 500","npspecial":"-","deck":"QABBB(B)","npupgrade":0},
+{"id":248,"name":"Aśvatthāman","class":"Archer","attack":"1708, 10249, 12409","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"1 HP","deck":"QQABB(B)","npupgrade":0},
+{"id":249,"name":"Asclepius","class":"Caster","attack":"1184, 6376, 8629","npmultiplier":"","npspecial":"-","deck":"QAAAB(A)","npupgrade":0}]
