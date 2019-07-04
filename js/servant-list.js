@@ -245,4 +245,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":246,"name":"William Tell","class":"Archer","attack":"1371, 7834, 9993","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"Evasion","deck":"QAABB(A)","npupgrade":0},
 {"id":247,"name":"Arjuna [Alter]","class":"Berserker","attack":"1803, 11669, 12773","npmultiplier":"300, 400, 450, 475, 500","npspecial":"-","deck":"QABBB(B)","npupgrade":0},
 {"id":248,"name":"Aśvatthāman","class":"Archer","attack":"1708, 10249, 12409","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"1 HP","deck":"QQABB(B)","npupgrade":0},
-{"id":249,"name":"Asclepius","class":"Caster","attack":"1184, 6376, 8629","npmultiplier":"","npspecial":"-","deck":"QAAAB(A)","npupgrade":0}]
+{"id":249,"name":"Asclepius","class":"Caster","attack":"1184, 6376, 8629","npmultiplier":"","npspecial":"-","deck":"QAAAB(A)","npupgrade":0},
+{"id":250,"name":"Demon King Nobunaga","class":"Avenger","attack":"1953, 12641, 13838","npmultiplier":"300, 400, 450, 475, 500","npspecial":"-","deck":"QABBB(B)","npupgrade":0},
+{"id":251,"name":"Mori Nagayoshi","class":"Berserker","attack":"1436, 7732, 10464","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"-","deck":"QAABB(B)","npupgrade":0},
+{"id":252,"name":"Nagao Kagetora","class":"Lancer","attack":"1602, 9617, 11644","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QAABB(A)","npupgrade":0}]
