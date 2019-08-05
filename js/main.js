@@ -12,7 +12,7 @@ $("#servantClass").change(function () {
   var matchVal = $("#servantClass option:selected").text();
   servantList.filter(function (serv) {
       if (serv.class == matchVal && serv.npmultiplier) {
-          $("#servant").append($('<option></option>').val(serv.id).html(serv.name));
+          $("#servant").append($('<option></option>').val(serv.id).html(`${serv.id}: ${serv.name}`));
       }
   });
 });

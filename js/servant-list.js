@@ -248,4 +248,12 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":249,"name":"Asclepius","class":"Caster","attack":"1184, 6376, 8629","npmultiplier":"","npspecial":"-","deck":"QAAAB(A)","npupgrade":0},
 {"id":250,"name":"Demon King Nobunaga","class":"Avenger","attack":"1953, 12641, 13838","npmultiplier":"300, 400, 450, 475, 500","npspecial":"-","deck":"QABBB(B)","npupgrade":0},
 {"id":251,"name":"Mori Nagayoshi","class":"Berserker","attack":"1436, 7732, 10464","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"-","deck":"QAABB(B)","npupgrade":0},
-{"id":252,"name":"Nagao Kagetora","class":"Lancer","attack":"1602, 9617, 11644","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QAABB(A)","npupgrade":0}]
+{"id":252,"name":"Nagao Kagetora","class":"Lancer","attack":"1602, 9617, 11644","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QAABB(A)","npupgrade":0},
+{"id":253,"name":"Leonardo da Vinci","class":"Rider","attack":"1681, 10883, 11913","npmultiplier":"400, 600, 675, 712.5, 750","npspecial":"-","deck":"QAABB(A)","npupgrade":0},
+{"id":254,"name":"Jason","class":"Saber","attack":"992, 5457, 8479","npmultiplier":"450, 600, 675, 712.5, 750","npspecial":"-","deck":"QAABB(A)","npupgrade":0},
+{"id":255,"name":"Paris","class":"Archer","attack":"1157, 6523, 9452","npmultiplier":"1200, 1600, 1800, 1900, 2000","npspecial":"-","deck":"QQAAB(Q)","npupgrade":0},
+{"id":256,"name":"Gareth","class":"Lancer","attack":"960, 5413, 7844","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"-","deck":"QQABB(B)","npupgrade":0},
+{"id":257,"name":"Bartholomew Roberts","class":"Rider","attack":"993, 5461, 8485","npmultiplier":"600, 800, 900, 950, 1000","npspecial":"-","deck":"QQAAB(Q)","npupgrade":0},
+{"id":258,"name":"Chen Gong","class":"Caster","attack":"1085, 6119, 8867","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QAAAB(A)","npupgrade":0},
+{"id":259,"name":"Charlotte Corday","class":"Assassin","attack":"997, 5488, 8528","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QQAAB(A)","npupgrade":0},
+{"id":260,"name":"Salome","class":"Berserker","attack":"1221, 6884, 9975","npmultiplier":"900, 1200, 1350, 1425, 1500","npspecial":"-","deck":"QAABB(A)","npupgrade":0}]
