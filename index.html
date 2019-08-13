@@ -18,7 +18,9 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <h2>FGO Noble Phantasm Damage Calculator v1.21</h2>
+        <h2>FGO Noble Phantasm Damage Calculator v1.30
+          <img src="./img/fou.png" hspace="3" width="35"></img>
+        </h2>
       </div>
 
       <div class="row">
@@ -48,19 +50,19 @@
           </ul>
           <p>How to use this Calculator
             <ul>
-              <li>Class, ATK, and NP Damage Multiplier fields are required</li>
+              <li>Class, ATK, and NP Damage Multiplier fields are required.</li>
               <li>Once you select a Class and Servant, its ATK and NP Multiplier fields will autofill (ATK at max level, ungrailed)</li>
-              <li>Fill in values for any buffs/debuffs and press Calculate</li>
-              <li>After selecting a class, you can input custom values without having to choose a servant</li>
+              <li>Fill in values for any buffs/debuffs and press Calculate.</li>
+              <li>After selecting a class, you can input custom values without having to choose a servant.</li>
             </ul>
           </p>
           <p>Tips
             <ul>
-              <li>Updated through Strengthenings XI (2019.08.10) v1.21</li>
-              <li>All NP multiplier values are up-to-date with JP server</li>
-              <li>Don't forget Passive Skill effects when doing calculations</li>
-              <li>Keep in mind effects that "activate first" before NP</li>
-              <li>Hover over the <img src="./img/alert-circle-outline.png" width="20"</img> for more detail about certain fields</li>
+              <li>Added OverCharge for selected servants. v1.30</li>
+              <li>All NP multiplier values are up-to-date with JP server.</li>
+              <li>Don't forget Passive Skill effects when doing calculations.</li>
+              <li>Keep in mind effects that "activate first" before NP.</li>
+              <li>Hover over the <img src="./img/alert-circle-outline.png" width="20"</img> for more detail about certain fields.</li>
             </ul>
           </p>
         </div>
@@ -107,7 +109,7 @@
               </div>
               <div class="col-md-5 mb-3">
                 <label for="NP">NP Damage Multiplier
-                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Extra damage mods like Arash's or Chen Gong's overcharge effects need to be manually added to their base NP damage multiplier.<br>This also applies to servants that have an OC effect based on remaining HP."></img>
+                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Extra damage mods like Arash's or Chen Gong's overcharge effects are added to their base NP damage multiplier.<br>This also applies to servants that have an OC effect based on remaining HP."></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="NP" placeholder="0" value="" min="0" data-bind="value:NP" required>
@@ -135,6 +137,10 @@
                   <input type="checkbox" class="custom-control-input" id="goldFou" disabled>
                   <label class="custom-control-label" for="goldFou">Golden Fou</label>
                 </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="ocButton" disabled>
+                  <label class="custom-control-label" for="ocButton">Overcharge</label>
+                </div>
               </div>
             </div>
 
@@ -157,7 +163,7 @@
                   </label>
                 </div>
               </div>
-              <div class="col-md-5 mb-3">
+              <div class="col-md-3 mb-3">
                 <label for="state">NP Level
                   <img src="./img/npupgrade.png" width="20" class="float-right" hspace="5" id="npupgraded" data-toggle="tooltip" data-html="true" title="This servant has undergone an NP Upgrade."></img>
                 </label>
@@ -168,6 +174,19 @@
                   <option value="2">NP 3</option>
                   <option value="3">NP 4</option>
                   <option value="4">NP 5</option>
+                </select>
+              </div>
+              <div class="col-md-2 mb-3">
+                <label for="state">
+                  <img src="./img/overcharge.png" class="float-right" hspace="2" width="37" data-toggle="tooltip" data-html="true" title="NP Overcharge level.<br>For effects that scale with HP, the values are for 1 HP."></img>
+                </label>
+                <select class="custom-select d-block w-100" id="ocLevel" disabled>
+                  <!--<option value="">Choose...</option>-->
+                  <option value="0">1</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                  <option value="4">5</option>
                 </select>
               </div>
           </div>

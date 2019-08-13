@@ -4,7 +4,10 @@ $("#servantClass").change(function () {
   $('#fou').prop('checked', false);
   $('#goldFou').prop('checked', false);
   $('#goldFou').prop('disabled', true);
+  $('#ocButton').prop('checked', false);
+  $('#ocButton').prop('disabled', true);
   $('#npLevel').val(0).attr('disabled','disabled');
+  $('#ocLevel').val(0).attr('disabled','disabled');
   $('#npupgraded').hide();
   //$('#NP').val(0);
   //$('#attack').val(0);
@@ -44,10 +47,13 @@ $('#goldFou').on('change', function(){
 $('#servant').on('change', function(){
   $('#grailed').prop('disabled', false);
   $('#npLevel').val(0).removeAttr('disabled','disabled');
+  $('#ocLevel').val(0).attr('disabled','disabled');
   $('#goldFou').prop('checked', false);
   $('#goldFou').prop('disabled', true);
   $('#fou').prop('checked', false);
   $('#attack').val(0);
+  $('#ocButton').prop('disabled', true);
+  $('#ocButton').prop('checked', false);
   //$('#NPBuffs').val(0);
   $('#npupgraded').hide();
   for (let i = 0; i < servantList.length; i++){
@@ -69,7 +75,31 @@ $('#servant').on('change', function(){
         if (servantList[i].npmultiplier){
           multi = servantList[i].npmultiplier.split(',');
         }
+
+
+        let oc = [0,0,0,0,0];
+
+        if (servantList[i].overcharge){
+          $('#ocButton').prop('disabled', false);
+        }
+
+        $('#ocButton').on('change', function(){
+          if ($(this).is(':checked')){
+            oc = servantList[i].overcharge.split(',');
+            $('#ocLevel').val(0).removeAttr('disabled','disabled');
+            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
+          }
+          else {
+            oc = [0,0,0,0,0];
+            $('#ocLevel').val(0).attr('disabled','disabled');
+            $('#ocLevel').val( Number(oc[0]) );
+            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()])));
+          }
+        })
+
+
         $('#NP').val( Number(multi[0]) );
+
 
         if (servantList[i].npupgrade == 1) {
           $('#npupgraded').show();
@@ -98,7 +128,10 @@ $('#servant').on('change', function(){
 
         $('#'+npcard).prop("checked", true).click();
         $('#npLevel').on('change', function(){
-          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()] ) ));
+          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
+        });
+        $('#ocLevel').on('change', function(){
+          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
         });
     }
   }
@@ -157,7 +190,10 @@ function resetStuff () {
   $('#fou').prop('checked', false);
   $('#goldFou').prop('checked', false);
   $('#goldFou').prop('disabled', true);
+  $('#ocButton').prop('checked', false);
+  $('#ocButton').prop('disabled', true);
   $('#npLevel').val(0).attr('disabled','disabled');
+  $('#ocLevel').val(0).attr('disabled','disabled');
   $('#NP').val(0);
   $('#attack').val(0);
   $('#NPSPBuffs').val(0);
