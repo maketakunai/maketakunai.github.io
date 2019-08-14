@@ -257,4 +257,8 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":257,"name":"Bartholomew Roberts","class":"Rider","attack":"993, 5461, 8485","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
 {"id":258,"name":"Chen Gong","class":"Caster","attack":"1085, 6119, 8867","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"0, 225, 450, 675, 900","deck":"QAAAB(A)","npupgrade":0},
 {"id":259,"name":"Charlotte Corday","class":"Assassin","attack":"997, 5488, 8528","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
-{"id":260,"name":"Salome","class":"Berserker","attack":"1221, 6884, 9975","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QAABB(A)","npupgrade":0}]
+{"id":260,"name":"Salome","class":"Berserker","attack":"1221, 6884, 9975","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QAABB(A)","npupgrade":0},
+{"id":261,"name":"Miyamoto Musashi","class":"Berserker","attack":"1964, 12712, 13915","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QAABB(A)","npupgrade":0},
+{"id":262,"name":"Osakabe-Hime","class":"Archer","attack":"1482, 8895, 10770","npmultiplier":"300, 400, 450, 475, 500","overcharge":"","deck":"QAAAB(B)","npupgrade":0},
+{"id":263,"name":"Carmilla","class":"Rider","attack":"1608, 9651, 11685","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
+{"id":264,"name":"Katsushika Hokusai","class":"Saber","attack":"1564, 9389, 11368","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QQAAB(A)","npupgrade":0}]
