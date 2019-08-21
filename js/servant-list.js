@@ -261,4 +261,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":261,"name":"Miyamoto Musashi","class":"Berserker","attack":"1964, 12712, 13915","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QAABB(A)","npupgrade":0},
 {"id":262,"name":"Osakabe-Hime","class":"Archer","attack":"1482, 8895, 10770","npmultiplier":"300, 400, 450, 475, 500","overcharge":"","deck":"QAAAB(B)","npupgrade":0},
 {"id":263,"name":"Carmilla","class":"Rider","attack":"1608, 9651, 11685","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
-{"id":264,"name":"Katsushika Hokusai","class":"Saber","attack":"1564, 9389, 11368","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QQAAB(A)","npupgrade":0}]
+{"id":264,"name":"Katsushika Hokusai","class":"Saber","attack":"1564, 9389, 11368","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
+{"id":265,"name":"Altria Pendragon","class":"Ruler","attack":"1482, 9593, 10501","npmultiplier":"300, 400, 450, 475, 500","overcharge":"","deck":"QQABB(B)","npupgrade":0},
+{"id":266,"name":"Mysterious AlterEgo Λ","class":"Lancer","attack":"1543, 9261, 11213","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
+{"id":267,"name":"Okita J Souji","class":"Assassin","attack":"1556, 9337, 11305","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQQAB(Q)","npupgrade":0}]
