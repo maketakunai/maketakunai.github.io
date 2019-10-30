@@ -76,7 +76,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":76,"name":"Mordred","class":"Saber","attack":"1811, 11723, 12833","npmultiplier":"400, 500, 550, 575, 600","overcharge":"","deck":"QAABB(B)","npupgrade":1},
 {"id":77,"name":"Nikola Tesla","class":"Archer","attack":"1820, 11781, 12896","npmultiplier":"400, 500, 550, 575, 600","overcharge":"","deck":"QAABB(B)","npupgrade":1},
 {"id":78,"name":"Altria Pendragon [Alter]","class":"Lancer","attack":"1661, 9968, 12069","npmultiplier":"400, 500, 550, 575, 600","overcharge":"","deck":"QQABB(B)","npupgrade":1},
-{"id":79,"name":"Paracelcus von Hohenheim","class":"Caster","attack":"1246, 6711, 9082","npmultiplier":"400, 500, 550, 575, 600","overcharge":"","deck":"QAAAB(A)","npupgrade":1},
+{"id":79,"name":"Paracelsus von Hohenheim","class":"Caster","attack":"1246, 6711, 9082","npmultiplier":"400, 500, 550, 575, 600","overcharge":"","deck":"QAAAB(A)","npupgrade":1},
 {"id":80,"name":"Charles Babbage","class":"Caster","attack":"1113, 5996, 8115","npmultiplier":"400, 500, 550, 575, 600","overcharge":"","deck":"QAABB(B)","npupgrade":1},
 {"id":81,"name":"Henry Jekyll & Hyde","class":"Assassin","attack":"1173, 6320, 8553","npmultiplier":"","overcharge":"","deck":"QQABB(B)","npupgrade":1},
 {"id":82,"name":"Frankenstein","class":"Berserker","attack":"1573, 9441, 11431","npmultiplier":"900, 1100, 1200, 1250, 1300","overcharge":"","deck":"QABBB(Q)","npupgrade":1},
@@ -264,4 +264,6 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":264,"name":"Katsushika Hokusai","class":"Saber","attack":"1564, 9389, 11368","npmultiplier":"900, 1200, 1350, 1425, 1500","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
 {"id":265,"name":"Altria Pendragon","class":"Ruler","attack":"1482, 9593, 10501","npmultiplier":"300, 400, 450, 475, 500","overcharge":"","deck":"QQABB(B)","npupgrade":0},
 {"id":266,"name":"Mysterious AlterEgo Λ","class":"Lancer","attack":"1543, 9261, 11213","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
-{"id":267,"name":"Okita J Souji","class":"Assassin","attack":"1556, 9337, 11305","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQQAB(Q)","npupgrade":0}]
+{"id":267,"name":"Okita J Souji","class":"Assassin","attack":"1556, 9337, 11305","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQQAB(Q)","npupgrade":0},
+{"id":268,"name":"Space Ishtar","class":"Avenger","attack":"1949, 12612, 13806","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QAABB(A)","npupgrade":0},
+{"id":269,"name":"Calamity Jane","class":"Archer","attack":"1499, 8996, 10892","npmultiplier":"1200, 1600, 1800, 1900, 2000","overcharge":"","deck":"QQAAB(Q)","npupgrade":0}]
