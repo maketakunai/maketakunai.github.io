@@ -27,7 +27,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <h2>FGO Noble Phantasm Damage Calculator v1.42
+        <h2>FGO Noble Phantasm Damage Calculator v1.43
           <img src="./img/fou.png" hspace="3" width="35"></img>
         </h2>
       </div>
@@ -67,7 +67,7 @@
           </p>
           <p>Tips
             <ul>
-              <li>04/16/2020 1.42: Added LB5-2 2nd round servant (280)</li>
+              <li>05/03/2020 1.43: Fixed incorrect damage range calculations with flat damage inputs. Updated with GudaGuda4 strengthenings.</li>
               <li><a href="#" data-toggle="modal" data-target="#changeLog">Click to view changelog.</a></li>
               <li>All NP multiplier values are up-to-date with JP server.</li>
               <li>Don't forget Passive Skill effects when doing calculations.</li>
@@ -293,8 +293,8 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="SPBuffs">Special Attack Buffs
-                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Buffs that 'increase own damage against' something.<br>Buffs like Jack's vs. females would go here."></img>
+                <label for="SPBuffs">PowerMod Buffs
+                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Buffs that 'increase own damage against' something.<br>Buffs like Jack's vs. females would go here.<br>Applies to event bonus CE damage."></img>
                   <img src="./img/specialattackup.png" class="float-right" hspace="5" width="20"></img>
                 </label>
                 <div class="input-group">
@@ -308,8 +308,8 @@
                 </div>
               </div>
               <div class="col-md-5 mb-3">
-                <label for="NPSPBuffs">NP Special Attack
-                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="When the NP 'Deals Extra Damage' to certain things.<br>Multipliers like Mordred's overcharge vs. Arthurs would go here.<br>Has a base of 100%, so if the NP does 150% extra, you'd put 50% in the box.<br><b>Not for buff multipliers!</b>"></img>
+                <label for="NPSPBuffs">NP Extra Damage
+                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="When the NP 'Deals Extra Damage' to certain things.<br>Multipliers like Mordred's overcharge vs. Arthurs would go here.<br>Calculates using a base of 100%, so if the NP does 150% extra, you'd put 50% in the box."></img>
                 </label>
                 <div class="input-group">
                   <input type="number" class="form-control" id="NPSPBuffs" placeholder="0" value="" min="0" data-bind="value:NPSPBuffs">
@@ -340,7 +340,7 @@
                     <option value="1">Neutral</option>
                     <option value="2">Yes (2x)</option>
                     <option value="0.5">No (0.5x)</option>
-                    <option value="1.5">Berserker (1.5x)</option>
+                    <option value="1.5">Berserker, AlterEgo (1.5x)</option>
                   </select>
                 </div>
             </div>
@@ -390,6 +390,7 @@
             </button>
           </div>
           <div class="modal-body">
+            04/16/2020 1.42: Added LB5-2 2nd round servant (280)<br>
             04/09/2020 1.41: Added LB5-2 1st round servants (~279)<br>
             03/06/2020 1.40: Added CBC2020 servant (277)<br>
             02/12/2020 1.39: Added servant Sei Shonagon (276)<br>

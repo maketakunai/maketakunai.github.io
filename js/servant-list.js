@@ -175,7 +175,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":175,"name":"Nero Claudius","class":"Caster","attack":"1677, 10857, 11885","npmultiplier":"300, 400, 450, 475, 500","overcharge":"","deck":"QAABB(B)","npupgrade":0},
 {"id":176,"name":"Frankenstein","class":"Saber","attack":"1558, 9353, 11325","npmultiplier":"1200, 1600, 1800, 1900, 2000","overcharge":"","deck":"QQABB(Q)","npupgrade":0},
 {"id":177,"name":"Nitocris","class":"Assassin","attack":"1468, 8812, 10670","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
-{"id":178,"name":"Oda Nobunaga","class":"Berserker","attack":"1691, 10146, 12285","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QABBB(B)","npupgrade":0},
+{"id":178,"name":"Oda Nobunaga","class":"Berserker","attack":"1691, 10146, 12285","npmultiplier":"800, 1000, 1100, 1150, 1200","overcharge":"","deck":"QABBB(B)","npupgrade":1},
 {"id":179,"name":"Altria Pendragon [Maid Alter]","class":"Rider","attack":"1665, 10776, 11796","npmultiplier":"1200, 1600, 1800, 1900, 2000","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
 {"id":180,"name":"Helena Blavatsky","class":"Archer","attack":"1574, 9446, 11437","npmultiplier":"450, 600, 675, 712.5, 750","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
 {"id":181,"name":"Minamoto-no-Raikou","class":"Lancer","attack":"1528, 9168, 11100","npmultiplier":"600, 800, 900, 950, 1000","overcharge":"","deck":"QQABB(B)","npupgrade":0},

@@ -15,7 +15,8 @@ $("#servantClass").change(function () {
   var matchVal = $("#servantClass option:selected").text();
   servantList.filter(function (serv) {
       if (serv.class == matchVal && serv.npmultiplier) {
-          $("#servant").append($('<option></option>').val(serv.id).html(`${serv.id}: ${serv.name}`));
+          //$("#servant").append($('<option></option>').val(serv.id).html(`${serv.id}: ${serv.name}`));
+          $("#servant").append($('<option></option>').val(serv.id).html(`${serv.name}`));
       }
   });
 });
@@ -170,8 +171,8 @@ $('form').on('submit', function() {
                 (1 + npspBuffs) * esAdvantage + flatAttack;
 
     $('#average').val(Math.round(total));
-    $('#low').val(Math.round(0.9 * total));
-    $('#high').val(Math.round(1.1 * total));
+    $('#low').val(Math.round(0.9 * (total-flatAttack) + flatAttack));
+    $('#high').val(Math.round(1.1 * (total-flatAttack) + flatAttack));
 
 });
 
