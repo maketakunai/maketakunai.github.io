@@ -19,7 +19,7 @@
     </script>
     <title>FGO NP Damage Calculator</title>
 
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/form-validation.css" rel="stylesheet">
   </head>
 
@@ -27,7 +27,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <h2>FGO Noble Phantasm Damage Calculator v1.43
+        <h2>FGO Noble Phantasm Damage Calculator v1.5.0
           <img src="./img/fou.png" hspace="3" width="35"></img>
         </h2>
       </div>
@@ -67,7 +67,7 @@
           </p>
           <p>Tips
             <ul>
-              <li>05/03/2020 1.43: Fixed incorrect damage range calculations with flat damage inputs. Updated with GudaGuda4 strengthenings.</li>
+              <li>05/04/2020 1.5.0: Various UI adjustments, added toggle for upgraded NPs.</li>
               <li><a href="#" data-toggle="modal" data-target="#changeLog">Click to view changelog.</a></li>
               <li>All NP multiplier values are up-to-date with JP server.</li>
               <li>Don't forget Passive Skill effects when doing calculations.</li>
@@ -137,7 +137,7 @@
               <div class ="col-md-10 mb-3">
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="grailed" disabled>
-                  <label class="custom-control-label" for="grailed">Max Grailed</label>
+                  <label class="custom-control-label" for="grailed">Max Grails</label>
                 </div>
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="fou">
@@ -151,6 +151,12 @@
                   <input type="checkbox" class="custom-control-input" id="ocButton" disabled>
                   <label class="custom-control-label" for="ocButton">Overcharge</label>
                 </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="npButton" disabled>
+                  <label class="custom-control-label" for="npButton">NP Upgrade
+                    <img src="./img/npupgrade.png" class="float-right" hspace="5" width="20"></img>
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -159,16 +165,13 @@
               <div class ="col-md-5 mb-3">
                 <label for="radio">NP Type</label>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <!--<div class="input-group-prepend">
-                    <span class="input-group-text">NP Type</span>
-                  </div>-->
-                  <label class="btn btn-secondary active">
+                  <label class="btn btn-custom1 active">
                     <input type="radio" name="cardoptions" id="buster" autocomplete="off" value="buster" checked>Buster
                   </label>
-                  <label class="btn btn-secondary">
+                  <label class="btn btn-custom2">
                     <input type="radio" name="cardoptions" id="arts" autocomplete="off" value="arts">Arts
                   </label>
-                  <label class="btn btn-secondary">
+                  <label class="btn btn-custom3">
                     <input type="radio" name="cardoptions" id="quick" autocomplete="off" value="quick">Quick
                   </label>
                 </div>
@@ -390,6 +393,7 @@
             </button>
           </div>
           <div class="modal-body">
+            05/03/2020 1.43: Fixed incorrect damage range calculations with flat damage inputs. Updated with GudaGuda4 strengthenings.<br>
             04/16/2020 1.42: Added LB5-2 2nd round servant (280)<br>
             04/09/2020 1.41: Added LB5-2 1st round servants (~279)<br>
             03/06/2020 1.40: Added CBC2020 servant (277)<br>
