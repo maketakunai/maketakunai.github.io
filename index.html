@@ -27,7 +27,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <h2>FGO Noble Phantasm Damage Calculator v1.5.0
+        <h2>FGO Noble Phantasm Damage Calculator v1.5.1
           <img src="./img/fou.png" hspace="3" width="35"></img>
         </h2>
       </div>
@@ -67,7 +67,7 @@
           </p>
           <p>Tips
             <ul>
-              <li>05/04/2020 1.5.0: Various UI adjustments, added toggle for upgraded NPs.</li>
+              <li>05/04/2020 1.5.1: Allows toggling of upgraded NP multipliers even for servants without upgrades (except for Altria Alter & Santa)</li>
               <li><a href="#" data-toggle="modal" data-target="#changeLog">Click to view changelog.</a></li>
               <li>All NP multiplier values are up-to-date with JP server.</li>
               <li>Don't forget Passive Skill effects when doing calculations.</li>
@@ -178,7 +178,8 @@
               </div>
               <div class="col-md-3 mb-3">
                 <label for="state">NP Level
-                  <img src="./img/npupgrade.png" width="20" class="float-right" hspace="5" id="npupgraded" data-toggle="tooltip" data-html="true" title="This servant has undergone an NP Upgrade."></img>
+                  <img src="./img/npupgrade.png" width="20" class="float-right" hspace="5" id="npupgraded" data-toggle="tooltip" data-html="true" title="This servant has an NP Upgrade."></img>
+                  <img src="./img/npupgradegray.png" width="20" class="float-right" hspace="5" id="nonnpupgraded" data-toggle="tooltip" data-html="true" title="This servant does not yet have an NP Upgrade.<br>This is a projected NP multiplier."></img>
                 </label>
                 <select class="custom-select d-block w-100" id="npLevel" disabled>
                   <!--<option value="">Choose...</option>-->
@@ -393,6 +394,7 @@
             </button>
           </div>
           <div class="modal-body">
+            05/04/2020 1.5.0: Various UI adjustments, added toggle for upgraded NPs.<br>
             05/03/2020 1.43: Fixed incorrect damage range calculations with flat damage inputs. Updated with GudaGuda4 strengthenings.<br>
             04/16/2020 1.42: Added LB5-2 2nd round servant (280)<br>
             04/09/2020 1.41: Added LB5-2 1st round servants (~279)<br>
@@ -438,6 +440,7 @@
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     })
+    $('#nonnpupgraded').hide();
     $('#npupgraded').hide();
       (function() {
         'use strict';

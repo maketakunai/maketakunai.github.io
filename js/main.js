@@ -11,6 +11,7 @@ $("#servantClass").change(function () {
   $('#npButton').prop('checked', false);
   $('#npButton').prop('disabled', true);
   $('#npupgraded').hide();
+  $('#nonnpupgraded').hide();
   //$('#NP').val(0);
   //$('#attack').val(0);
   $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
@@ -61,6 +62,7 @@ $('#servant').on('change', function(){
   $('#npButton').prop('disabled', true);
   //$('#NPBuffs').val(0);
   $('#npupgraded').hide();
+  $('#nonnpupgraded').hide();
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
         let npcard = ``;
@@ -79,10 +81,10 @@ $('#servant').on('change', function(){
         let multi = [0,0,0,0,0];
         let oc = [0,0,0,0,0];
 
-        if (servantList[i].npupgrade == 1) {
+        // if (servantList[i].npupgrade == 1) {
           $('#npButton').prop('checked', false);
           $('#npButton').prop('disabled', false);
-        }
+        // }
 
         if (servantList[i].npmultiplier){
           multi = servantList[i].npmultiplier.split(',');
@@ -90,12 +92,20 @@ $('#servant').on('change', function(){
 
         $('#npButton').on('change', function(){
           if ($(this).is(':checked')){
-            $('#npupgraded').show();
+            if (servantList[i].npupgrade === 1) {
+              $('#nonnpupgraded').hide();
+              $('#npupgraded').show();
+            }
+            else if (servantList[i].npupgrade === 0){
+              $('#nonnpupgraded').show();
+              $('#npupgraded').hide();
+            }
             multi = servantList[i].ugnpmultiplier.split(',');
             $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
           }
           else {
             $('#npupgraded').hide();
+            $('#nonnpupgraded').hide();
             multi = servantList[i].npmultiplier.split(',');
             $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
           }
@@ -205,6 +215,7 @@ $('form').on('reset', function() {
 
 function resetStuff () {
   $('#npupgraded').hide();
+  $('#nonnpupgraded').hide();
   $('#grailed').prop('disabled', true);
   $('#grailed').prop('checked', false);
   $('#fou').prop('checked', false);
