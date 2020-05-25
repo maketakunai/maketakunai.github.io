@@ -277,4 +277,6 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":277,"name":"Odysseus","class":"Rider","attack":"1822, 11795, 12911","npmultiplier":"450,600,675,712.5,750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
 {"id":278,"name":"Dioscuri","class":"Saber","attack":"1829, 11840, 12961","npmultiplier":"900,1200,1350,1425,1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
 {"id":279,"name":"Caenis","class":"Lancer","attack":"1649, 9896, 11982","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QQABB(B)","npupgrade":0},
-{"id":280,"name":"Romulus-Quirinus","class":"Lancer","attack":"1896, 12273, 13435","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAABB(B)","npupgrade":0}]
+{"id":280,"name":"Romulus-Quirinus","class":"Lancer","attack":"1896, 12273, 13435","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAABB(B)","npupgrade":0},
+{"id":281,"name":"Voyager","class":"Foreigner","attack":"1615, 10450, 11439","npmultiplier":"600, 800, 900, 950, 1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
+{"id":282,"name":"Kijyo Koyo","class":"Berserker","attack":"1529, 9177, 11111","npmultiplier":"600, 800, 900, 950, 1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QABBB(B)","npupgrade":0}]
