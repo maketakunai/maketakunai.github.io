@@ -11,7 +11,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":11,"name":"Emiya","class":"Archer","attack":"1566, 9398, 11379","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAAAB(B)","npupgrade":1},
 {"id":12,"name":"Gilgamesh","class":"Archer","attack":"1897, 12280, 13442","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAABB(B)","npupgrade":1},
 {"id":13,"name":"Robin Hood","class":"Archer","attack":"1247, 6715, 9088","npmultiplier":"900,1200,1350,1425,1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
-{"id":14,"name":"Atalante","class":"Archer","attack":"1438, 862.53, 10453","npmultiplier":"600,800,900,950,1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QQAAB(Q)","npupgrade":1},
+{"id":14,"name":"Atalante","class":"Archer","attack":"1438, 8633, 10453","npmultiplier":"600,800,900,950,1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QQAAB(Q)","npupgrade":1},
 {"id":15,"name":"Euryale","class":"Archer","attack":"1306, 7032, 9517","npmultiplier":"900,900,900,900,900","ugnpmultiplier":"1200,1200,1200,1200,1200","overcharge":"","deck":"QQAAB(A)","npupgrade":1},
 {"id":16,"name":"Arash","class":"Archer","attack":"1057, 5816, 9037","npmultiplier":"600,800,900,950,1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"0, 200, 400, 600, 800","deck":"QAABB(B)","npupgrade":1},
 {"id":17,"name":"Cu Chulainn","class":"Lancer","attack":"1344, 7239, 9797","npmultiplier":"1200,1600,1800,1900,2000","ugnpmultiplier":"1600,2000,2200,2300,2400","overcharge":"","deck":"QQABB(Q)","npupgrade":1},
