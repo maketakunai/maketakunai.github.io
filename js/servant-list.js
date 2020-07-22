@@ -164,7 +164,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":164,"name":"Passionlip","class":"Alter Ego","attack":"1716, 10299, 12470","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QABBB(B)","npupgrade":1},
 {"id":165,"name":"Suzuka Gozen","class":"Saber","attack":"1590, 9544, 11556","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAABB(B)","npupgrade":1},
 {"id":166,"name":"BB","class":"Moon Cancer","attack":"1366, 8197, 9925","npmultiplier":"900,1200,1350,1425,1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
-{"id":167,"name":"Sessyoin Kiara","class":"Alter Ego","attack":"1803, 11668, 12772","npmultiplier":"450,600,675,712.5,750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAABB(A)","npupgrade":0},
+{"id":167,"name":"Sessyoin Kiara","class":"Alter Ego","attack":"1803, 11668, 12772","npmultiplier":"450,600,675,712.5,750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAABB(A)","npupgrade":1},
 {"id":168,"name":"B e a s t III/R","class":"Beast","attack":"2121, 13728, 15027","npmultiplier":"","ugnpmultiplier":"","overcharge":"","deck":"QAABB(A)","npupgrade":0},
 {"id":169,"name":"Caster of the Nightless City","class":"Caster","attack":"1423, 9212, 10084","npmultiplier":"450,600,675,712.5,750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAAAB(A)","npupgrade":1},
 {"id":170,"name":"Assassin of the Nightless City","class":"Assassin","attack":"1496, 8981, 10874","npmultiplier":"1200,1600,1800,1900,2000","ugnpmultiplier":"1600,2000,2200,2300,2400","overcharge":"","deck":"QQABB(Q)","npupgrade":1},
