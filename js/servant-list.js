@@ -284,4 +284,4 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":285,"name":"Sessyoin Kiara","class":"Moon Cancer","attack":"1719, 11128, 12181","npmultiplier":"450, 600, 675, 712.5, 750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAABB(A)","npupgrade":0},
 {"id":286,"name":"Illyasviel von Einzbern","class":"Archer","attack":"1683, 10098, 12226","npmultiplier":"600, 800, 900, 950, 1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
 {"id":287,"name":"Brynhildr","class":"Berserker","attack":"1699, 10197, 12346","npmultiplier":"300, 400, 450, 475, 500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QABBB(B)","npupgrade":0},
-{"id":288,"name":"Yu Meiren","class":"Lancer","attack":"1649, 9896, 11982","npmultiplier":"900, 1200, 1350, 1425, 1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QQABB(A)","npupgrade":0}]
+{"id":288,"name":"Yu Meiren","class":"Lancer","attack":"1649, 9896, 11982","npmultiplier":"1200, 1600, 1800, 1900, 2000","ugnpmultiplier":"1600,2000,2200,2300,2400","overcharge":"","deck":"QQABB(Q)"}]
