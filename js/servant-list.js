@@ -200,7 +200,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":200,"name":"Asagami Fujino","class":"Archer","attack":"1716, 10299, 12470","npmultiplier":"600,800,900,950,1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QAABB(B)","npupgrade":0},
 {"id":201,"name":"Anastasia","class":"Caster","attack":"1629, 10546, 11544","npmultiplier":"450,600,675,712.5,750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAAAB(A)","npupgrade":0},
 {"id":202,"name":"Atalante [Alter]","class":"Berserker","attack":"1634, 9806, 11873","npmultiplier":"1200,1600,1800,1900,2000","ugnpmultiplier":"1600,2000,2200,2300,2400","overcharge":"","deck":"QQABB(Q)","npupgrade":0},
-{"id":203,"name":"Avicebron","class":"Caster","attack":"1184, 6376, 8629","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAAAB(B)","npupgrade":0},
+{"id":203,"name":"Avicebron","class":"Caster","attack":"1184, 6376, 8629","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAAAB(B)","npupgrade":1},
 {"id":204,"name":"Antonio Salieri","class":"Avenger","attack":"1509, 8125, 10996","npmultiplier":"450,600,675,712.5,750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAABB(A)","npupgrade":0},
 {"id":205,"name":"Ivan the Terrible","class":"Rider","attack":"1795, 11619, 12719","npmultiplier":"300,400,450,475,500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QAABB(B)","npupgrade":1},
 {"id":206,"name":"Achilleus","class":"Rider","attack":"1836, 11883, 13008","npmultiplier":"600,800,900,950,1000","ugnpmultiplier":"800,1000,1100,1150,1200","overcharge":"","deck":"QQAAB(Q)","npupgrade":0},
