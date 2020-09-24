@@ -201,7 +201,7 @@ $('form').on('submit', function() {
 
     $('#average').val(Math.round(total));
     $('#low').val(Math.round(0.9 * (total-flatAttack) + flatAttack));
-    $('#high').val(Math.round(1.1 * (total-flatAttack) + flatAttack));
+    $('#high').val(Math.round(1.099 * (total-flatAttack) + flatAttack));
     $(window).scrollTop(0);
 });
 
