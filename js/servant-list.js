@@ -288,4 +288,7 @@ const servantList = [{"id":1,"name":"Mash Kyrielight","class":"Shielder","attack
 {"id":288,"name":"Yu Meiren","class":"Lancer","attack":"1649, 9896, 11982","npmultiplier":"1200, 1600, 1800, 1900, 2000","ugnpmultiplier":"1600,2000,2200,2300,2400","overcharge":"","deck":"QQABB(Q)","npupgrade":0},
 {"id":289,"name":"Abigail Williams [Summer]","class":"Foreigner","attack":"1820, 11781, 12896","npmultiplier":"300, 400, 450, 475, 500","ugnpmultiplier":"400,500,550,575,600","overcharge":"","deck":"QQABB(B)","npupgrade":0},
 {"id":290,"name":"Tomoe Gozen","class":"Saber","attack":"1590, 9544, 11556","npmultiplier":"450, 600, 675, 712.5, 750","ugnpmultiplier":"600,750,825,862.5,900","overcharge":"","deck":"QAABB(A)","npupgrade":0},
-{"id":291,"name":"Murasaki Shikibu","class":"Rider","attack":"1455, 8730, 10570","npmultiplier":"900, 1200, 1350, 1425, 1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QQAAB(A)","npupgrade":0}]
+{"id":291,"name":"Murasaki Shikibu","class":"Rider","attack":"1455, 8730, 10570","npmultiplier":"900, 1200, 1350, 1425, 1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QQAAB(A)","npupgrade":0},
+{"id":292,"name":"Himiko","class":"Ruler","attack":"1647, 10659, 11668","npmultiplier":"","ugnpmultiplier":"","overcharge":"","deck":"QAABB(B)","npupgrade":0},
+{"id":293,"name":"Saitou Hajime","class":"Saber","attack":"1570, 9425, 11412","npmultiplier":"900, 1200, 1350, 1425, 1500","ugnpmultiplier":"1200,1500,1650,1725,1800","overcharge":"","deck":"QAABB(A)","npupgrade":0},
+{"id":294,"name":"Oda Nobukatsu","class":"Archer","attack":"930, 5116, 7949","npmultiplier":"","ugnpmultiplier":"","overcharge":"","deck":"QQABB(B)","npupgrade":0}]
