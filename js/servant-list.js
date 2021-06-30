@@ -159,7 +159,7 @@ const servantList = [
     "id": 14,
     "name": "Atalante",
     "class": "Archer",
-    "attack": "1438, 862.53, 10453",
+    "attack": "1438, 8633, 10453",
     "npmultiplier": "600,800,900,950,1000",
     "ugnpmultiplier": "800,1000,1100,1150,1200",
     "secondupgrade": "",
