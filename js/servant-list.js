@@ -3754,5 +3754,17 @@ const servantList = [
     "overcharge": "",
     "deck": "QAABB(A)",
     "npupgrade": 0
+  },
+  {
+    "id": 314,
+    "name": "Koyanskaya of Light",
+    "class": "Assassin",
+    "attack": "1795, 11616, 14925",
+    "npmultiplier": "300, 400, 450, 475, 500",
+    "ugnpmultiplier": "400,500,550,575,600",
+    "secondupgrade": "",
+    "overcharge": "",
+    "deck": "QQABB(B)",
+    "npupgrade": 0
   }
 ]
