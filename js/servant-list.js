@@ -477,7 +477,7 @@ const servantList = [
     "secondupgrade": "",
     "overcharge": "",
     "deck": "QQQAB(Q)",
-    "npupgrade": 0
+    "npupgrade": 1
   },
   {
     "id": 41,
@@ -1413,7 +1413,7 @@ const servantList = [
     "secondupgrade": "",
     "overcharge": "",
     "deck": "QAABB(B)",
-    "npupgrade": 0
+    "npupgrade": 1
   },
   {
     "id": 119,
@@ -2301,7 +2301,7 @@ const servantList = [
     "secondupgrade": "",
     "overcharge": "",
     "deck": "QAAAB(B)",
-    "npupgrade": 0
+    "npupgrade": 1
   },
   {
     "id": 193,
@@ -3765,6 +3765,18 @@ const servantList = [
     "secondupgrade": "",
     "overcharge": "",
     "deck": "QQABB(B)",
+    "npupgrade": 0
+  },
+  {
+    "id": 315,
+    "name": "Habetrot",
+    "class": "Rider",
+    "attack": "1440, 8642, 10464",
+    "npmultiplier": "450, 600, 675, 712.5, 750",
+    "ugnpmultiplier": "600,750,825,862.5,900",
+    "secondupgrade": "",
+    "overcharge": "",
+    "deck": "QQAAB(A)",
     "npupgrade": 0
   }
 ]
