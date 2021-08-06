@@ -27,7 +27,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <h2>FGO Noble Phantasm Damage Calculator v1.8.05
+        <h2>FGO Noble Phantasm Damage Calculator v1.9.00
           <img src="./img/fou.png" hspace="3" width="35"></img>
         </h2>
       </div>
@@ -67,7 +67,7 @@
           </p>
           <p>Tips
             <ul>
-              <li>08/04/2021 1.8.05: Updated with servant (315) and various strengthenings</li>
+              <li>08/06/2021 1.9.00: Updated to allow for level selection. OC temporarily disabled.</li>
               <li><a href="#" data-toggle="modal" data-target="#changeLog">Click to view changelog.</a></li>
               <li>All NP multiplier values are up-to-date with JP server.</li>
               <li>Don't forget Passive Skill effects when doing calculations.</li>
@@ -81,7 +81,7 @@
           <h4 class="mb-3">Servant Info</h4>
           <form class="needs-validation" novalidate>
             <div class="row">
-              <div class="col-md-5 mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="servantClass">Class</label>
                 <select class="custom-select d-block w-100" id="servantClass" required>
                   <option value="" selected = "true" disabled>Choose...</option>
@@ -102,7 +102,7 @@
                   Please select a class.
                 </div>
               </div>
-              <div class="col-md-5 mb-3">
+              <div class="col-md-6 mb-3">
                 <label for="state">Servant</label>
                 <select class="custom-select d-block w-100" id="servant">
                   <option value="" selected = "true" disabled>Choose a class first!</option>
@@ -110,15 +110,21 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-5 mb-3">
+              <div class="col-md-3 mb-3">
                 <label for="attack">Total ATK</label>
                 <input type="number" class="form-control" id="attack" placeholder="0" value="" min="0" data-bind="value:attack" required>
                 <div class="invalid-feedback">
                   Valid attack value is required.
                 </div>
               </div>
-              <div class="col-md-5 mb-3">
-                <label for="NP">NP Damage Multiplier
+              <div class="col-md-3 mb-3">
+                <label for="state">Level</label>
+                <select class="custom-select d-block w-100" id="level" disabled>
+                  <!-- <option value="" selected = "true" >1</option> -->
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="NP">NP Multiplier
                   <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Extra damage mods like Arash's or Chen Gong's overcharge effects are added to their base NP damage multiplier.<br>This also applies to servants that have an OC effect based on remaining HP."></img>
                 </label>
                 <div class="input-group">
@@ -135,10 +141,10 @@
 
             <div class="row">
               <div class ="col-md-10 mb-3">
-                <div class="custom-control custom-checkbox custom-control-inline">
+                <!-- <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="grailed" disabled>
                   <label class="custom-control-label" for="grailed">Max Grails</label>
-                </div>
+                </div> -->
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="fou">
                   <label class="custom-control-label" for="fou">Fou</label>
@@ -151,6 +157,7 @@
                   <input type="checkbox" class="custom-control-input" id="ocButton" disabled>
                   <label class="custom-control-label" for="ocButton">Overcharge</label>
                 </div>
+                <br>
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="npButton" disabled>
                   <label class="custom-control-label" for="npButton">NP Upgrade
@@ -380,6 +387,7 @@
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">created by maketakunai (Reverie#0718)</p>
+        servant data courtesy of the <a href="https://apps.atlasacademy.io/db/">Atlas Academy DB</a>
         <ul class="list-inline">inspired by the work of the following:
           <li class="list-inline-item"><a href="http://blogs.nrvnqsr.com/entry.php/3309-How-is-damage-calculated">Kyte</a></li>
           <li class="list-inline-item"><a href="https://fgo.boyakin.net/fgocalc">Boyakin</a></li>
@@ -398,6 +406,7 @@
             </button>
           </div>
           <div class="modal-body">
+            08/04/2021 1.8.05: Updated with servant (315) and various strengthenings</br>
             08/01/2021 1.8.04: Updated with 6th Anniversary servant (314)</br>
             07/14/2021 1.8.03: Updated with LB6 Part 2 servants (312-313)<br>
             06/11/2021 1.8.02: Updated with LB6 servants (309-311)<br>
@@ -469,6 +478,13 @@
     <script>
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
+    })
+    $(function() {
+      var select = '';
+      for (i=1;i<=120;i++){
+        select += '<option val=' + i + '>' + i + '</option>';
+      }
+      $('#level').html(select);
     })
     $('#nonnpupgraded').hide();
     $('#npupgraded').hide();

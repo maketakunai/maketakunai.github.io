@@ -12,16 +12,15 @@ $("#servantClass").change(function () {
   $('#npButton').prop('disabled', true);
   $('#secondNP').prop('checked', false);
   $('#secondNP').prop('disabled', true);
+  $('#level').val(1).attr('disabled','disabled');
+  $('#attack').val(0);
   $('#npupgraded').hide();
   $('#nonnpupgraded').hide();
-  //$('#NP').val(0);
-  //$('#attack').val(0);
   $('#servant').empty().append($('<option></option>').val('Select Servant').html('Select Servant'));
   var matchVal = $("#servantClass option:selected").text();
   servantList.filter(function (serv) {
-      if (serv.class == matchVal && serv.npmultiplier) {
-          //$("#servant").append($('<option></option>').val(serv.id).html(`${serv.id}: ${serv.name}`));
-          $("#servant").append($('<option></option>').val(serv.id).html(`${serv.name}`));
+      if (serv.class.toLowerCase() == matchVal.toLowerCase().replace(/\s/g, '') && serv.np) {
+          $("#servant").append($('<option></option>').val(serv.id).html(`${serv.name} [${serv.id}]`));
       }
   });
 });
@@ -52,6 +51,7 @@ $('#goldFou').on('change', function(){
 
 $('#servant').on('change', function(){
   $('#grailed').prop('disabled', false);
+  $('#level').val(1).removeAttr('disabled','disabled');
   $('#npLevel').val(0).removeAttr('disabled','disabled');
   $('#ocLevel').val(0).attr('disabled','disabled');
   $('#goldFou').prop('checked', false);
@@ -64,52 +64,56 @@ $('#servant').on('change', function(){
   $('#npButton').prop('disabled', true);
   $('#secondNP').prop('checked', false);
   $('#secondNP').prop('disabled', true);
-  //$('#NPBuffs').val(0);
   $('#npupgraded').hide();
   $('#nonnpupgraded').hide();
   for (let i = 0; i < servantList.length; i++){
     if ( $('#servant').val() == servantList[i].id ){
-        let npcard = ``;
-        switch(servantList[i].deck[6]){
-          case "Q":
-            npcard = "quick";
-            break;
-          case "A":
-            npcard = "arts";
-            break;
-          case "B":
-            npcard = "buster";
-            break;
-        }
-        let attk = servantList[i].attack.split(',');
+        let npcard = servantList[i].np[0][0];
+        $('#'+npcard).prop("checked", true).click();
+        $('#attack').val(servantList[i].attack[0])
+        $('#level').on('change', function(){
+          $('#attack').val(servantList[i].attack[$('#level').val()-1])
+          $('#fou').prop('checked', false);
+          $('#goldFou').prop('checked', false);
+          $('#goldFou').prop('disabled', true);
+        })
         let multi = [0,0,0,0,0];
         let oc = [0,0,0,0,0];
 
-        // if (servantList[i].npupgrade == 1) {
+        if (servantList[i].np.length >= 1) {
           $('#npButton').prop('checked', false);
           $('#npButton').prop('disabled', false);
-        // }
+        }
 
-        if (servantList[i].secondupgrade) {
+        if (servantList[i].np.length == 3) {
           $('#secondNP').prop('disabled', false);
         }
 
-        if (servantList[i].npmultiplier){
-          multi = servantList[i].npmultiplier.split(',');
+        if (servantList[i].np){
+          multi = servantList[i].np[0].slice(1);
         }
+
+        $('#npLevel').on('change', function(){
+          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]/10) + Number(oc[$('#ocLevel').val()])));
+        });
+        $('#ocLevel').on('change', function(){
+          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]/10) + Number(oc[$('#ocLevel').val()])));
+        });
 
         $('#npButton').on('change', function(){
           if ($(this).is(':checked')){
-            if (servantList[i].npupgrade) {
+            if (servantList[i].np.length > 1) {
               $('#nonnpupgraded').hide();
               $('#npupgraded').show();
+              multi = servantList[i].np[1].slice(1);
             }
-            else if (servantList[i].npupgrade === 0){
+            else if (servantList[i].np.length === 1){
               $('#nonnpupgraded').show();
               $('#npupgraded').hide();
+              multi = projectedMultiplier(servantList[i].np[0]).slice(1)
             }
-            multi = servantList[i].ugnpmultiplier.split(',');
-            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
+
+            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]/10) + Number(oc[$('#ocLevel').val()])));
           }
           else {
             if($('#secondNP').is(':checked')){
@@ -117,8 +121,8 @@ $('#servant').on('change', function(){
             }
             $('#npupgraded').hide();
             $('#nonnpupgraded').hide();
-            multi = servantList[i].npmultiplier.split(',');
-            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
+            multi = servantList[i].np[0].slice(1);
+            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]/10) + Number(oc[$('#ocLevel').val()])));
           }
         })
 
@@ -127,12 +131,12 @@ $('#servant').on('change', function(){
             $('#nonnpupgraded').hide();
             $('#npupgraded').show();
             $('#npButton').prop('checked', true);
-            multi = servantList[i].secondupgrade.split(',');
-            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
+            multi = servantList[i].np[2].slice(1);
+            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]/10) + Number(oc[$('#ocLevel').val()])));
           }
           else{
-            multi = servantList[i].ugnpmultiplier.split(',');
-            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
+            multi = servantList[i].np[1].slice(1);
+            $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]/10) + Number(oc[$('#ocLevel').val()])));
           }
         });
 
@@ -155,37 +159,29 @@ $('#servant').on('change', function(){
         })
 
 
-        $('#NP').val( Number(multi[0]) );
+        $('#NP').val( Number(multi[0])/10 );
 
 
-        if ($('#grailed').is(':checked')){
-          $('#attack').val( Number( attk[2]) );
-        }
-        else
-          $('#attack').val( Number( attk[1]) );
+        // if ($('#grailed').is(':checked')){
+        //   $('#attack').val( Number( attk[2]) );
+        // }
+        // else
+        //   $('#attack').val( Number( attk[1]) );
 
-        $('#grailed').on('change', function(){
-          if ($(this).is(':checked')) {
-            $('#goldFou').prop('checked', false);
-            $('#goldFou').prop('disabled', true);
-            $('#fou').prop('checked', false);
-            $('#attack').val( Number(attk[2]) );
-          }
-          else {
-            $('#goldFou').prop('checked', false);
-            $('#goldFou').prop('disabled', true);
-            $('#fou').prop('checked', false);
-            $('#attack').val( Number(attk[1]) );
-          }
-        });
-
-        $('#'+npcard).prop("checked", true).click();
-        $('#npLevel').on('change', function(){
-          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
-        });
-        $('#ocLevel').on('change', function(){
-          $('#NP').val( Math.round(Number( multi[$('#npLevel').val()]) + Number(oc[$('#ocLevel').val()])));
-        });
+        // $('#grailed').on('change', function(){
+        //   if ($(this).is(':checked')) {
+        //     $('#goldFou').prop('checked', false);
+        //     $('#goldFou').prop('disabled', true);
+        //     $('#fou').prop('checked', false);
+        //     $('#attack').val( Number(attk[2]) );
+        //   }
+        //   else {
+        //     $('#goldFou').prop('checked', false);
+        //     $('#goldFou').prop('disabled', true);
+        //     $('#fou').prop('checked', false);
+        //     $('#attack').val( Number(attk[1]) );
+        //   }
+        // });
     }
   }
 });
@@ -252,6 +248,7 @@ function resetStuff () {
   $('#npButton').prop('disabled', true);
   $('#secondNP').prop('checked', false);
   $('#secondNP').prop('disabled', true);
+  $('#level').val(0).attr('disabled','disabled');
   $('#NP').val(0);
   $('#attack').val(0);
   $('#NPSPBuffs').val(0);
@@ -294,4 +291,32 @@ function cardDmg(input){
     cardVal = 0.8;
   }
   return cardVal;
+}
+
+function projectedMultiplier(input) {
+  if (input[0] == 'buster') {
+    if (input[1] ==  3000) {
+      return (["buster", 4000, 5000, 5500, 5750, 6000])
+    }
+    else if (input[1] == 6000) {
+      return (["buster", 8000, 10000, 11000, 11500, 12000])
+    }
+  }
+  else if (input[0] == 'arts') {
+    if (input[1] ==  4500) {
+      return (["arts", 6000, 7500, 8250, 8625, 9000])
+    }
+    else if (input[1] == 9000) {
+      return (["arts", 12000, 15000, 16500, 17250, 18000])
+    }
+  }
+  else if (input[0] == 'quick') {
+    if (input[1] ==  6000) {
+      return (["quick", 8000, 10000, 11000, 11500, 12000])
+    }
+    else if (input[1] == 12000) {
+      return (["quick", 16000, 20000, 22000, 23000, 24000])
+    }
+  }
+  return input
 }
