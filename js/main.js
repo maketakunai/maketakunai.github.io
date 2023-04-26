@@ -273,6 +273,9 @@ function classDmg(input){
   'ruler'.indexOf(input.toLowerCase()) > -1 || 'avenger'.indexOf(input.toLowerCase()) > -1 ){
     classVal = 1.1;
   }
+  else if ('beast'.indexOf(input.toLowerCase()) > -1){
+    classVal = 1.0;
+  }
   return classVal;
 }
 
