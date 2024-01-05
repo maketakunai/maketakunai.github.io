@@ -27,7 +27,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <h2>FGO Noble Phantasm Damage Calculator v1.9.45
+        <h2>FGO Noble Phantasm Damage Calculator
           <img src="./img/fou.png" hspace="3" width="35"></img>
         </h2>
       </div>
@@ -67,8 +67,7 @@
           </p>
           <p>Tips
             <ul>
-              <li>12/31/2023 1.9.45: Updated up to servant 402.</li>
-              <li><a href="#" data-toggle="modal" data-target="#changeLog">Click to view changelog.</a></li>
+              <li><a href="https://github.com/maketakunai/maketakunai.github.io/blob/master/CHANGELOG.md">Click to view changelog.</a></li>
               <li>All NP multiplier values are up-to-date with JP server.</li>
               <li>Don't forget Passive Skill effects when doing calculations.</li>
               <li>Keep in mind effects that "activate first" before NP.</li>
@@ -113,7 +112,7 @@
             </div>
             <div class="row">
               <div class="col-md-3 mb-3">
-                <label for="attack">Total ATK</label>
+                <label for="attack">Servant ATK</label>
                 <input type="number" class="form-control" id="attack" placeholder="0" value="" min="0" data-bind="value:attack" required>
                 <div class="invalid-feedback">
                   Valid attack value is required.
@@ -142,7 +141,7 @@
             </div>
 
             <div class="row">
-              <div class ="col-md-10 mb-3">
+              <div class ="col-md-12 mb-3">
                 <!-- <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="grailed" disabled>
                   <label class="custom-control-label" for="grailed">Max Grails</label>
@@ -155,11 +154,12 @@
                   <input type="checkbox" class="custom-control-input" id="goldFou" disabled>
                   <label class="custom-control-label" for="goldFou">Golden Fou</label>
                 </div>
-                <div class="custom-control custom-checkbox custom-control-inline">
+                <!-- <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="ocButton" disabled>
                   <label class="custom-control-label" for="ocButton">Overcharge</label>
                 </div>
-                <br>
+                
+                <br> -->
                 <div class="custom-control custom-checkbox custom-control-inline">
                   <input type="checkbox" class="custom-control-input" id="npButton" disabled>
                   <label class="custom-control-label" for="npButton">NP Upgrade
@@ -175,7 +175,7 @@
 
 
             <div class="row">
-              <div class ="col-md-5 mb-3">
+              <div class ="col-md-4 mb-3">
                 <label for="radio">NP Type</label>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-custom1 active">
@@ -203,19 +203,29 @@
                   <option value="4">NP 5</option>
                 </select>
               </div>
-              <div class="col-md-2 mb-3">
+              <!-- <div class="col-md-2 mb-3">
                 <label for="state">
                   <img src="./img/overcharge.png" class="float-right" hspace="2" width="37" data-toggle="tooltip" data-html="true" title="NP Overcharge level.<br>For effects that scale with HP, the values are for 1 HP."></img>
                 </label>
                 <select class="custom-select d-block w-100" id="ocLevel" disabled>
-                  <!--<option value="">Choose...</option>-->
+
                   <option value="0">1</option>
                   <option value="1">2</option>
                   <option value="2">3</option>
                   <option value="3">4</option>
                   <option value="4">5</option>
                 </select>
+              </div> -->
+              <div class="col-md-3 mb-3">
+                <label for="ceAttack">CE ATK
+                  <img src="./img/alert-circle-outline.png" class="float-right" hspace="5" width="20" data-toggle="tooltip" data-html="true" title="Additional attack damage from equipped Craft Essence."></img>
+                </label>
+                  <input type="number" class="form-control" id="ceAttack" placeholder="0" value="" data-bind="value:ceAttack">
+                  <div class="invalid-feedback">
+                    Valid attack value is required.
+                  </div>
               </div>
+
           </div>
 
             <div class="row">
@@ -400,123 +410,6 @@
       </footer>
     </div>
 
-    <div class="modal fade" id="changeLog" tabindex="-1" role="dialog" aria-labelledby="logLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="logLabel">NP Calc Changelog</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            11/30/2023 1.9.44: Updated up to servant 399.<br>
-            10/30/2023 1.9.43: Updated up to servant 396.<br>
-            10/25/2023 1.9.42: Updated up to servant 395.<br>
-            09/20/2023 1.9.41: Updated up to servant 393.<br>
-            08/15/2023 1.9.40: Updated up to servant 392.<br>
-            08/11/2023 1.9.39: Updated up to servant 388.<br>
-            07/30/2023 1.9.38: Updated up to servant 385.<br>
-            07/05/2023 1.9.37: Updated up to servant 384.<br>
-            06/25/2023 1.9.36: Updated up to servant 383.<br>
-            06/18/2023 1.9.35: Updated up to servant 382.<br>
-            05/24/2023 1.9.34: Updated up to servant 380.<br>
-            04/26/2023 1.9.33: Updated up to servant 379.<br>
-            04/19/2023 1.9.32: Updated up to servant 376.<br>
-            03/17/2023 1.9.31: Updated up to servant 375.<br>
-            02/17/2023 1.9.30: Updated up to servant 374.<br>
-            02/07/2023 1.9.29: Updated up to servant 373.<br>
-            01/31/2023 1.9.28: Updated up to servant 372.<br>
-            01/18/2023 1.9.27: Updated up to servant 370.<br>
-            12/31/2022 1.9.26: Updated up to servant 369.<br>
-            11/09/2022 1.9.25: Updated up to servant 368.<br>
-            10/12/2022 1.9.24: Updated up to servant 367.<br>
-            09/17/2022 1.9.23: Updated up to servant 364.<br>
-            08/19/2022 1.9.22: Updated up to servant 361.<br>
-            08/13/2022 1.9.21: Updated up to servant 356.<br>
-            08/10/2022 1.9.20: Updated up to servant 354.<br>
-            07/31/2022 1.9.19: Updated up to servant 352. Happy 7th anniversary!<br>
-            07/03/2022 1.9.18: Updated up to servant 350.<br>
-            06/29/2022 1.9.17: Updated up to servant 349.<br>
-            06/08/2022 1.9.16: Updated up to servant 348.<br>
-            06/01/2022 1.9.15: Updated up to servant 345.<br>
-            04/27/2022 1.9.14: Updated for servant 339-341.<br>
-            04/13/2022 1.9.13: Updated for servant 338.<br>
-            04/06/2022 1.9.12: Updated for servant 337.<br>
-            02/09/2022 1.9.11: Updated for servant 336.<br>
-            01/12/2022 1.9.10: Updated for servant 335.<br>
-            12/31/2021 1.9.09: Happy new year! Updated for servant 334.<br>
-            12/22/2021 1.9.08: Updated for servants 331 & 332.<br>
-            12/08/2021 1.9.07: Updated for servant 330.<br>
-            11/22/2021 1.9.06: Updated for servant 329.<br>
-            11/17/2021 1.9.05: Updated for servants 327-328.<br>
-            10/20/2021 1.9.04: Updated for servants 324-326.<br>
-            09/15/2021 1.9.03: Updated for servants 321-323.<br>
-            09/08/2021 1.9.02: Updated for servants 317-320.<br>
-            08/11/2021 1.9.01: Updated for servant 316.<br>
-            08/06/2021 1.9.00: Updated to allow for level selection. OC temporarily disabled.<br>
-            08/04/2021 1.8.05: Updated with servant (315) and various strengthenings<br>
-            08/01/2021 1.8.04: Updated with 6th Anniversary servant (314)<br>
-            07/14/2021 1.8.03: Updated with LB6 Part 2 servants (312-313)<br>
-            06/11/2021 1.8.02: Updated with LB6 servants (309-311)<br>
-            04/26/2021 1.8.01: Updated with new servant (308)<br>
-            04/22/2021 1.8.00: Updated to reflect Strengthening Campaign XIII<br>
-            03/24/2021 1.7.1: Updated to include servant (306)<br>
-            02/10/2021 1.7.0: Updated to include servant (305)<br>
-            01/20/2021 1.6.9: Updated to include servants (303 & 304)<br>
-            01/01/2021 1.6.8: Happy new year! Updated to include Senji Muramasa (302)<br>
-            12/16/2020 1.6.7: Updated for new servants from Xmas 2020<br>
-            12/11/2020 1.6.6: Updated for new servants (299) from LB5.5<br>
-            12/04/2020 1.6.5: Updated for new servants from LB5.5<br>
-            11/27/2020 1.6.4: Updated for Sakata Kintoki/Kato Danzo strengthening<br>
-            11/11/2020 1.6.3: Updated for new servants 295 & 296<br>
-            11/04/2020 1.6.2: Updated to reflect MHXX strengthening<br>
-            10/09/2020 1.6.1: Updated for GudaGuda Yamatai-koku 2020<br>
-            09/23/2020 1.6.0: Fixed incorrect multiplier for upper bound on damage.<br>
-            09/14/2020 1.5.9: Updated for Interlude Campaign 14<br>
-            08/24/2020 1.5.8: Updated for Summer 5 2nd banner servants (~291); Fixed incorrect ATK for 243 & 246<br>
-            08/17/2020 1.5.7: Updated for Summer 5 1st banner servants (~288)<br>
-            08/10/2020 1.5.6: Updated to reflect 5th Anniversary Strengthenings<br>
-            07/22/2020 1.5.5: Updated to reflect Ooku Strengthenings<br>
-            07/15/2020 1.5.4: Updated to reflect CCC Main Interlude Strengthenings<br>
-            05/29/2020 1.5.3: Added Fate/Requiem Servant 283<br>
-            05/25/2020 1.5.2: Added Fate/Requiem Servants 281 & 282<br>
-            05/04/2020 1.5.1: Allows toggling of upgraded NP multipliers even for servants without upgrades (except for Altria Alter & Santa)<br>
-            05/04/2020 1.5.0: Various UI adjustments, added toggle for upgraded NPs.<br>
-            05/03/2020 1.43: Fixed incorrect damage range calculations with flat damage inputs. Updated with GudaGuda4 strengthenings.<br>
-            04/16/2020 1.42: Added LB5-2 2nd round servant (280)<br>
-            04/09/2020 1.41: Added LB5-2 1st round servants (~279)<br>
-            03/06/2020 1.40: Added CBC2020 servant (277)<br>
-            02/12/2020 1.39: Added servant Sei Shonagon (276)<br>
-            12/31/2019 1.38: Added servant Yang Guifei (275)<br>
-            12/18/2019 1.37: Added LB5-1 servants (~274)<br>
-            12/11/2019 1.36: Updated to reflect Interlude Campaign 11<br>
-            11/28/2019 1.35: Added Nightingale's Xmas servants (~271)<br>
-            10/30/2019 1.34: Added Saber Wars II servants (~269)<br>
-            09/04/2019 1.33: Updated to reflect Interlude Campaign 10<br>
-            08/21/2019 1.32: Added 2nd round Summer 4 servants (~267)<br>
-            08/14/2019 1.31: Added 1st round Summer 4 servants (~264)<br>
-            08/12/2019 1.30: Updated to add selected OverCharges<br>
-            08/10/2019 1.21: Updated to reflect Strengthenings 11<br>
-            08/04/2019 1.20: Added 4th anniversary servants (~260)<br>
-            07/04/2019 1.10: Added GudaGuda4 servants (~252)<br>
-            06/22/2019 1.09: Added 2nd round of LB4 servants (~249)<br>
-            06/15/2019 1.08: Added 1st round of LB4 servants (~246)<br>
-            06/05/2019 1.07: Updated to reflect Interlude Campaign 9<br>
-            04/27/2019 1.06: Added Astraea (242) and Gray (243)<br>
-            04/24/2019 1.05: Updated to reflect Shikis' strengthenings<br>
-            04/18/2019 1.04: Updated to add tooltips<br>
-            03/27/2019 1.03: Added Kama (239)<br>
-            03/20/2019 1.02: Updated to reflect Interlude Campaign 8<br>
-            02/27/2019 1.01: Added Kingprotea (238)<br>
-            02/24/2019 1.00 β: Test version of calculator
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"><\/script>')</script>
