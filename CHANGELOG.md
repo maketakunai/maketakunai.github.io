@@ -1,4 +1,6 @@
 # Changelog
+## 01/17/2024 2.0.01
+- Updated up to servant 405.
 ## 01/04/2024 2.0.00
 - Removed OC
 - Added field for CE damage
