@@ -1,4 +1,6 @@
 # Changelog
+## 08/04/2024 2.0.08
+- Updated up to servant 417. Happy 9th anniversary!
 ## 06/28/2024 2.0.07
 - Updated up to servant 416.
 ## 05/01/2024 2.0.06
