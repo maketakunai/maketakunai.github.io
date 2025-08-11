@@ -1,4 +1,6 @@
 # Changelog
+## 08/11/2025 2.0.21
+- Updated up to servant 444.
 ## 05/27/2025 2.0.20
 - Updated up to servant 440.
 ## 03/05/2025 2.0.19
